@@ -1,0 +1,60 @@
+html{}
+body{ 
+		margin: 0; 
+		padding: 0; 
+		background: #F1F1F1 url('../img/bg.png'); 
+		font-family: "Trebuchet MS", Helvetica, sans-serif;
+		color: #252525;
+		font-size: 14px;
+	}
+
+/* Common Items */
+img{ border: 0; }
+
+.clear{ clear: both; }
+.clearl{ clear: left; }
+.hide{ display: none; }
+
+/* Outer Container */
+#O{ width: 1150px; padding: 0 25px; margin: auto; padding-top: 5.5em; /* border: 1px solid green; */ }
+
+/* Header */
+#H{}
+#H h1{ font-weight: bold; margin: 0; padding: 0; font-size: 2.1em; text-transform: uppercase; }
+#H #Social{ float: right; padding-right: 3em; }
+#H #Social img{ padding-left: 5px; }
+#H h2{ font-weight: bold; margin: 0; padding: 0; font-size: 0.9em; text-transform: uppercase; color: #B4B4B4; }
+
+/* Nav Tabs */
+#Nav{}
+#Nav>ul{ display: block; margin: 0; padding: 1.8em 0 0 0; }
+#Nav>ul>li{ display: block; float: left; padding: 0; }
+#Nav>ul>li{ width: 20%; margin: 0 2.2%; border: 2px solid #D4D4D4; padding: 25px 0; height: 50px; }
+#Nav>ul>li>a{ display: block; width: 50%; padding: 0.5em 1em; }
+#Nav>ul>li>a:hover{ padding: 0.5em 1em 0.5em 2em; }
+
+#Nav ul li#NBlog{ background: white url('../img/nav-blog.png'); background-position: center; }
+#Nav ul li#NBlog a{ color: white; font-size: 1.6em; text-decoration: none; background: #a3a049; }
+#Nav ul li#NProjects{ background: white url('../img/nav-code.png'); }
+#Nav ul li#NProjects a{ color: white; font-size: 1.6em; text-decoration: none; background: #99432e; }
+#Nav ul li#NAbout{ background: white url('../img/nav-about.png'); }
+#Nav ul li#NAbout a{ color: white; font-size: 1.6em; text-decoration: none; background: #382c1f; }
+#Nav ul li#NTwitter{ background: white url('../img/nav-twitter.png'); overflow: hidden; }
+
+#Nav.ex{} /* Expanded navigation, main page only */
+#Nav.ex>ul>li{ height: 300px; padding: 150px 0; }
+#Nav.ex>ul>li#NTwitter{ height: 550px; padding: 25px 0; }
+
+/* Twitter Feed */
+#NTwitter>div{ padding: 0 0.75em; font-size: 0.8em; }
+#NTwitter ul{ list-style: none; margin: 0; padding: 0;}
+#NTwitter ul li{ clear: left; padding-bottom: 1em; }
+#NTwitter ul li img{ padding-right: .5em; padding-bottom: 1em; float: left; }
+#NTwitter a{ color: #0084B4; text-decoration: none; }
+
+/* Content */
+#C{}
+#CC{ width: 92%; margin: auto; }
+
+/* Footer */
+#F{ margin-top: 3em; font-weight: bold; padding-left: 5em; font-size: 0.9em; text-transform: uppercase; color: #B4B4B4; }
