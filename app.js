@@ -33,7 +33,8 @@ var static_pages = require('StaticPages');
 // Routes
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Home'
+    title: 'Home',
+    showFullNav: true
   });
 });
 
