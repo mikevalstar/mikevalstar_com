@@ -29,14 +29,9 @@ app.configure('production', function(){
 
 // Internal Page Handlers
 var static_pages = require('StaticPages');
+var sp = new static_pages();
+sp.initPages(app);
 
-// Routes
-app.get('/', function(req, res){
-  res.render('index', {
-    title: 'Home',
-    showFullNav: true
-  });
-});
 
 app.listen(3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

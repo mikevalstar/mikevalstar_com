@@ -8,7 +8,12 @@
 var MV = {};
 
 MV.nav = {
-	transform: function(){
+	  isExpanded: function(){
+	  	return $('.ex').length > 0;
+	  }
+	, transform: function(){
+		if(!MV.nav.isExpanded()) return; // already shrunk
+		
 		$('#Nav>ul>li').animate({ height: '50', paddingTop: '25', paddingBottom: '25' }, 700, function(){
 			$('#Nav').removeClass('ex');
 			$("#NTwitter div li:not(.tweet_first)").remove();
@@ -17,6 +22,19 @@ MV.nav = {
 	}
 };
 
+MV.content = {
+	load: function(hash){
+		if(!hash || hash == '') return; // nothing to do; main page
+		
+		MV.nav.transform(); // transform the navigation if needed
+		
+		$('#CC').html('Loading Content...');
+	
+		var url = (hash[0] == '#') ? hash.substring(1): hash;
+		$('#CC').load(url + ' #CC');
+	}
+}
+
 
 $(function(){
 	// Initialize page
@@ -24,15 +42,15 @@ $(function(){
 	// Initialize the navigation
 	$('#NBlog a').click(function(e){
 		e.preventDefault();
-		MV.nav.transform();
+		MV.content.load('#Blog');
 	});
 	$('#NProjects a').click(function(e){
 		e.preventDefault();
-		MV.nav.transform();
+		MV.content.load('#Projects');
 	});
 	$('#NAbout a').click(function(e){
 		e.preventDefault();
-		MV.nav.transform();
+		MV.content.load('#About');
 	});
 
 	// Initialize twitter feed
@@ -43,4 +61,10 @@ $(function(){
         count: $('#Nav.ex').length == 0 ? 1 : 6,
         loading_text: "loading tweets..."
     });
+    
+    // initialize the hash lookup
+    $(window).hashchange( function(){
+		MV.content.load( location.hash );
+	});
+	$(window).hashchange();
 });
