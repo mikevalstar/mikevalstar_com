@@ -16,22 +16,30 @@ MV.nav = {
 	  	return $('.ex').length > 0;
 	  }
 	  
-	, transform: function(){
+	, transform: function(quick){
 		if(!MV.nav.isExpanded()) return; // already shrunk
+		
+		if(quick){ 
+			$('#Nav').removeClass('ex');
+			$("#NTwitter div li:not(.tweet_first)").remove();
+			$('#C').removeClass('hide');
+			return;
+		}
 		
 		$('#Nav>ul>li').animate({ height: '50', paddingTop: '25', paddingBottom: '25' }, 700, function(){
 			$('#Nav').removeClass('ex');
 			$("#NTwitter div li:not(.tweet_first)").remove();
+			$('#Nav>ul>li').css('height', '').css('paddingTop', '').css('paddingBottom', '');
 		});
 		$('#C').removeClass('hide');
 	}
 };
 
 MV.content = {
-	  load: function(hash, fn){
-		if(!hash) return; // nothing to do
+	  load: function(hash, fn, transform){
+		if(!hash || hash == '') return; // nothing to do
 		
-		MV.nav.transform(); // transform the navigation if needed
+		MV.nav.transform(transform); // transform the navigation if needed
 		
 		$('#CC').html('Loading Content...');
 		
@@ -72,7 +80,7 @@ $(function(){
         username: "mikevalstar",
         join_text: "auto",
         avatar_size: 48,
-        count: $('#Nav.ex').length == 0 ? 1 : 6,
+        count: $('#Nav.ex').length || (location.hash && location.hash != '') == 0 ? 1 : 6,
         loading_text: "loading tweets..."
     });
     
@@ -80,5 +88,5 @@ $(function(){
     $(window).hashchange( function(){
 		MV.content.load( location.hash );
 	});
-	$(window).hashchange();
+	MV.content.load( location.hash, false, true );
 });

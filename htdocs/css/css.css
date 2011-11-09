@@ -11,9 +11,12 @@ body{
 /* Common Items */
 img{ border: 0; }
 
+.b{ font-weight: bold; }
 .clear{ clear: both; }
 .clearl{ clear: left; }
 .hide{ display: none; }
+
+a{ color: #0084B4; }
 
 /* Outer Container */
 #O{ width: 1150px; padding: 0 25px; margin: auto; padding-top: 5.5em; }
@@ -55,8 +58,47 @@ img{ border: 0; }
 
 /* Content */
 #C{ padding-top: 1.5em; }
-#CC{ border: 1px solid #CCC; border-radius: 4px; background: white; width: 92%; margin: auto; padding: 0.5em 1em; }
+#CC{ border: 1px solid #CCC; border-radius: 4px; background: white; width: 92%; margin: auto; padding: 0.5em 1em 3em 1em; }
 
+#CC h2{ margin: 0; padding: 0.8em 0 0 0; font-size: 2.5em; } /* Page Titles */
+#CC h3{ margin: 0.8em 0 0.2em 0; padding: 0; font-size: 1.5em; }
+#CC h4{}
+#CC h5{ margin:0; padding:0; padding-left: 1.5em; }
+#CC h5 time{ border-bottom: 1px dashed #CCC; }
+
+#CC h2 a,#CC h3 a,#CC h4 a,#CC h5 a{ color: black; text-decoration: underline; }
+
+a.twitter{ background: url('../img/social/16px/twitter-2.png') no-repeat bottom left; padding-left: 19px; }
+a.reddit{ background: url('../img/social/16px/reddit.png') no-repeat bottom left; padding-left: 19px; }
+a.google{ background: url('../img/social/16px/google-plus-black.png') no-repeat bottom left; padding-left: 19px; }
+a.facebook{ background: url('../img/social/16px/facebook.png') no-repeat bottom left; padding-left: 19px; }
+a.github{ background: url('../img/social/16px/github.png') no-repeat bottom left; padding-left: 19px; }
+a.linkedin{ background: url('../img/social/16px/linkedin.png') no-repeat bottom left; padding-left: 19px; }
+a.stackoverflow{ background: url('../img/social/16px/stackoverflow.png') no-repeat bottom left; padding-left: 19px; }
+a.flickr{ background: url('../img/social/16px/flickr.png') no-repeat bottom left; padding-left: 19px; }
+
+/* Content: Blog */
+
+/* Content: About */
+#aboutContent{ float: left; width: 70% }
+#aboutFindMe{ float: left; width: 28%; }
+#aboutFindMe ul{ list-style: none; margin:0; padding:0; }
+#aboutFindMe ul li{ margin:0; padding:0; }
+
+/* Content: Social Links */
+#aboutFindMe ul li a{ display: block; height: 34px; padding-left: 38px; }
+#aboutFindMe ul li a span{ position: relative; top: 15px; }
+
+#aboutFindMe ul li a.twitter{ background: url('../img/social/32px/twitter-2.png') no-repeat; }
+#aboutFindMe ul li a.reddit{ background: url('../img/social/32px/reddit.png') no-repeat; }
+#aboutFindMe ul li a.google{ background: url('../img/social/32px/google-plus-black.png') no-repeat; }
+#aboutFindMe ul li a.facebook{ background: url('../img/social/32px/facebook.png') no-repeat; }
+#aboutFindMe ul li a.github{ background: url('../img/social/32px/github.png') no-repeat; }
+#aboutFindMe ul li a.linkedin{ background: url('../img/social/32px/linkedin.png') no-repeat; }
+#aboutFindMe ul li a.stackoverflow{ background: url('../img/social/32px/stackoverflow.png') no-repeat; }
+#aboutFindMe ul li a.flickr{ background: url('../img/social/32px/flickr.png') no-repeat; }
+
+/* Content: Misc */
 #disqus_identity{ display: none; }
 #disqus_permalink{ display: none; }
 
@@ -72,6 +114,8 @@ img{ border: 0; }
 	#Nav ul li#NTwitter{ padding: 8px 0; height: 54px; }
 	#Nav>ul>li>a{ padding: 0.25em 0.5em; width: 60%; }
 	#Nav>ul>li>a:hover{ padding: 0.25em 0.5em 0.25em 1em; }
+	
+	a.twitter,a.reddit,a.google,a.facebook,a.github,a.linkedin,a.stackoverflow,a.flickr{ background-image: none; padding-left: 0px; }
 }
 
 /* small sized page [< 990px; scrolling at 750px]*/
