@@ -16,7 +16,7 @@ img{ border: 0; }
 .hide{ display: none; }
 
 /* Outer Container */
-#O{ width: 1150px; padding: 0 25px; margin: auto; padding-top: 5.5em; /* border: 1px solid green; */ }
+#O{ width: 1150px; padding: 0 25px; margin: auto; padding-top: 5.5em; }
 
 /* Header */
 #H{}
@@ -30,7 +30,7 @@ img{ border: 0; }
 #Nav{}
 #Nav>ul{ display: block; margin: 0; padding: 1.8em 0 0 0; }
 #Nav>ul>li{ display: block; float: left; padding: 0; }
-#Nav>ul>li{ width: 20%; margin: 0 2.2%; border: 2px solid #D4D4D4; padding: 25px 0; height: 50px; }
+#Nav>ul>li{ width: 20%; margin: 0 2.2%; border: 2px solid #D4D4D4; border-radius: 4px; padding: 25px 0; height: 50px; }
 #Nav>ul>li>a{ display: block; width: 50%; padding: 0.5em 1em; }
 #Nav>ul>li>a:hover{ padding: 0.5em 1em 0.5em 2em; }
 
@@ -54,8 +54,8 @@ img{ border: 0; }
 #NTwitter a{ color: #0084B4; text-decoration: none; }
 
 /* Content */
-#C{}
-#CC{ width: 92%; margin: auto; }
+#C{ padding-top: 1.5em; }
+#CC{ border: 1px solid #CCC; border-radius: 4px; background: white; width: 92%; margin: auto; padding: 0.5em 1em; }
 
 #disqus_identity{ display: none; }
 #disqus_permalink{ display: none; }

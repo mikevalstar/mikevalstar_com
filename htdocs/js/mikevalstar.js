@@ -42,7 +42,7 @@ MV.content = {
 		}
 	
 		var url = (hash[0] == '#') ? hash.substring(2): hash;
-		$('#CC').load(url + ' #CC', callback);
+		$('#C').load(url + ' #CC', callback);
 	}
 	
 	,  loadDisqus: function(){
