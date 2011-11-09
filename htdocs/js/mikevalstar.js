@@ -23,15 +23,15 @@ MV.nav = {
 };
 
 MV.content = {
-	load: function(hash){
+	load: function(hash, fn){
 		if(!hash || hash == '') return; // nothing to do; main page
 		
 		MV.nav.transform(); // transform the navigation if needed
 		
 		$('#CC').html('Loading Content...');
 	
-		var url = (hash[0] == '#') ? hash.substring(1): hash;
-		$('#CC').load(url + ' #CC');
+		var url = (hash[0] == '#') ? '/' + hash.substring(1): '/' + hash;
+		$('#CC').load(url + ' #CC', fn);
 	}
 }
 
@@ -42,7 +42,12 @@ $(function(){
 	// Initialize the navigation
 	$('#NBlog a').click(function(e){
 		e.preventDefault();
-		MV.content.load('#Blog');
+		MV.content.load('#Blog', function(){
+			var links = $('#CC a[href^="/"]');
+			$.each(links, function(i, val){
+				$(val).attr('href', '#' + $(val).attr('href').substring(1) );
+				});
+		});
 	});
 	$('#NProjects a').click(function(e){
 		e.preventDefault();
