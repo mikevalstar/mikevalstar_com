@@ -5,12 +5,17 @@
 	about how some of the below is done.
 */
 
+var disqus_shortname = 'mikevalstar'; // required: replace example with your forum shortname
+var disqus_identifier = 'bp_0';
+var disqus_url = 'http://mikevalstar.com/';
+
 var MV = {};
 
 MV.nav = {
 	  isExpanded: function(){
 	  	return $('.ex').length > 0;
 	  }
+	  
 	, transform: function(){
 		if(!MV.nav.isExpanded()) return; // already shrunk
 		
@@ -23,39 +28,43 @@ MV.nav = {
 };
 
 MV.content = {
-	load: function(hash, fn){
-		if(!hash || hash == '') return; // nothing to do; main page
+	  load: function(hash, fn){
+		if(!hash) return; // nothing to do
 		
 		MV.nav.transform(); // transform the navigation if needed
 		
 		$('#CC').html('Loading Content...');
+		
+		var callback = function(){
+			if($('#disqus_thread').length == 1)
+				MV.content.loadDisqus();
+			if(fn) fn();
+		}
 	
-		var url = (hash[0] == '#') ? '/' + hash.substring(1): '/' + hash;
-		$('#CC').load(url + ' #CC', fn);
+		var url = (hash[0] == '#') ? hash.substring(2): hash;
+		$('#CC').load(url + ' #CC', callback);
+	}
+	
+	,  loadDisqus: function(){
+		disqus_identifier = $('#disqus_identity').html();
+		disqus_url = $('#disqus_permalink a').attr('href');
+		/* * * DON'T EDIT BELOW THIS LINE * * */
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	
 	}
 }
 
 
 $(function(){
 	// Initialize page
-
-	// Initialize the navigation
-	$('#NBlog a').click(function(e){
-		e.preventDefault();
-		MV.content.load('#Blog', function(){
-			var links = $('#CC a[href^="/"]');
-			$.each(links, function(i, val){
-				$(val).attr('href', '#' + $(val).attr('href').substring(1) );
-				});
-		});
-	});
-	$('#NProjects a').click(function(e){
-		e.preventDefault();
-		MV.content.load('#Projects');
-	});
-	$('#NAbout a').click(function(e){
-		e.preventDefault();
-		MV.content.load('#About');
+	$("a").live("click", function(event){
+	    var href = $(this).attr("href");
+	    if(href[0] == "/"){
+	        event.preventDefault();
+	        window.location.hash = "#!" + href;
+	    }
 	});
 
 	// Initialize twitter feed
