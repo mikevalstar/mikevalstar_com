@@ -62,3 +62,24 @@ img{ border: 0; }
 
 /* Footer */
 #F{ margin-top: 3em; font-weight: bold; padding-left: 5em; font-size: 0.9em; text-transform: uppercase; color: #B4B4B4; }
+
+
+/* medium sized page [990 - 1225px] */
+@media screen and (max-width: 1225px) {
+	body{ font-size: 12px; }
+	#O{ width: 940px; padding: 0 15px; margin: auto; padding-top: 4em; }
+	#Nav>ul>li{ padding: 15px 0; height: 40px; }
+	#Nav ul li#NTwitter{ padding: 8px 0; height: 54px; }
+	#Nav>ul>li>a{ padding: 0.25em 0.5em; width: 60%; }
+	#Nav>ul>li>a:hover{ padding: 0.25em 0.5em 0.25em 1em; }
+}
+
+/* small sized page [< 990px; scrolling at 750px]*/
+@media screen and (max-width: 990px) {
+	body{ font-size: 11px; }
+	#O{ width: 730px; padding: 0 10px; margin: auto; padding-top: 2em; }
+	#Nav>ul>li{ padding: 9px 0; height: 38px; }
+	#Nav ul li#NTwitter{ padding: 5px 0; height: 46px; }
+	#Nav>ul>li>a{ padding: 0.25em 0.5em; width: 70%; }
+	#Nav>ul>li>a:hover{ padding: 0.25em 0.5em 0.25em 0.9em; }
+}
