@@ -43,9 +43,12 @@ MV.content = {
 		
 		$('#CC').html('Loading Content...');
 		
-		var callback = function(){
+		var callback = function(responseText, textStatus, XMLHttpRequest){
 			if($('#disqus_thread').length == 1)
 				MV.content.loadDisqus();
+				
+			$(document).attr('title',  $(responseText).filter('title').text());
+			
 			if(fn) fn();
 		}
 	
