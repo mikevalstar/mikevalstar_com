@@ -14,6 +14,8 @@ img{ border: 0; }
 .b{ font-weight: bold; }
 .tc{ text-align: center; }
 .tr{ text-align: right; }
+.fl{ float: left; }
+.fr{ float: right; }
 .clear{ clear: both; }
 .clearl{ clear: left; }
 .hide{ display: none; }
@@ -89,7 +91,7 @@ a.flickr{ background: url('../img/social/16px/flickr.png') no-repeat bottom left
 .blogMini p, .blogPost p{ text-indent: 1.5em; margin: 1em 3em; text-align: justify; }
 .blogMini p.tr, .blogPost p.tr{ text-align: right; }
 
-.blogMini img, .blogPost img{ max-width: 98%; outline: 1px solid #CCC; border: 3px solid white; }
+.blogMini img, .blogPost img{ max-width: 98%; outline: 1px solid #CCC; border: 3px solid white; margin: 5px 15px; }
 
 /* Content: About */
 #aboutContent{ float: left; width: 70% }
