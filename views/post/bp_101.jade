@@ -1,0 +1,40 @@
+.blogPost
+
+	h2 
+		a(href="/Blog/101/Brand_New_Once_Again") Brand New Once Again
+	h5 Posted on 
+		time(pubdate="2011-11-09") November 9
+			sup th
+			|  2011
+	
+	div.tc: img(src="/usrimg/toronto_skyline.png")
+	
+	:markdown
+		In what has become an annual tradition; I have re-written the website again. And this time I've re-written it in [node.js](http://nodejs.org/). I do plan on taking better care of the website this time around and devoting a little more time to my other projects including [gentoo-portage.com](http://gentoo-portage.com) and [gentoo-wiki.com](http://gentoo-wiki.com) as well as my newer projects e.g. [medusajs](https://github.com/mikevalstar/medusajs).
+		
+		It's been a busy year for me: [new job](http://globalive.com) in a [new city](http://www.toronto.ca), 2 new apartments and I've been on a killer diet / workout regime for most of that time. But I think I've finally cleared enough time in my schedule to permit some more hobby projects.
+		
+		I do plan on making a tutorial series on node.js with [express](http://expressjs.com/) on creating a website (this website).  You can see the first bit of code I'm starting with on the github page [https://github.com/mikevalstar/mikevalstar_com](https://github.com/mikevalstar/mikevalstar_com) And I will start with that in the next couple weeks.
+
+#disqus_identity bp_101
+#disqus_permalink
+	a(href="http://mikevalstar.com/Blog/101/Brand_New_Once_Again") http://mikevalstar.com/Blog/101/Brand_New_Once_Again
+#disqus_thread
+
+script(type="text/javascript")
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'mikevalstar'; // required: replace example with your forum shortname
+	disqus_identifier = $('#disqus_identity').html();
+	disqus_url = $('#disqus_permalink a').attr('href');
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+
+noscript Please enable JavaScript to view the 
+	a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
+a.dsq-brlink(href="http://disqus.com")blog comments powered by 
+	span.logo-disqus Disqus
