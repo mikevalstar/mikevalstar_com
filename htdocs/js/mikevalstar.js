@@ -77,8 +77,8 @@ $(function(){
 			&& href.substring(href.length - 4) != '.jpg'
 			&& href.substring(href.length - 5) != '.jpeg'
 			&& href.substring(href.length - 4) != '.gif'
-			&& !href.indexOf('usrimg')
-			&& !href.indexOf('usrfiles') 
+			&& !(href.indexOf('usrimg') > 0)
+			&& !(href.indexOf('usrfiles') > 0)
 				){
 	        event.preventDefault();
 	        window.location.hash = "#!" + href;
