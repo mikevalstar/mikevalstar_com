@@ -72,7 +72,14 @@ $(function(){
 	// Initialize page
 	$("a").live("click", function(event){
 	    var href = $(this).attr("href");
-	    if(href[0] == "/"){
+	    if(href[0] == "/" 
+			&& href.substring(href.length - 4) != '.png'
+			&& href.substring(href.length - 4) != '.jpg'
+			&& href.substring(href.length - 5) != '.jpeg'
+			&& href.substring(href.length - 4) != '.gif'
+			&& !href.indexOf('usrimg')
+			&& !href.indexOf('usrfiles') 
+				){
 	        event.preventDefault();
 	        window.location.hash = "#!" + href;
 	    }

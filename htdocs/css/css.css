@@ -60,7 +60,7 @@ a{ color: #0084B4; }
 
 /* Content */
 #C{ padding-top: 1.5em; }
-#CC{ border: 1px solid #CCC; border-radius: 4px; background: white; width: 92%; margin: auto; padding: 0.5em 1em 3em 1em; font-size: 1.15em; color: #333; }
+#CC{ border: 1px solid #CCC; border-radius: 4px; background: white; width: 92%; margin: auto; padding: 0.5em 2em 3em 2em; font-size: 1.15em; color: #333; }
 
 #CC h2{ margin: 0; padding: 0.8em 0 0 0; font-size: 2.2em; } /* Page Titles */
 #CC h3{ margin: 0.8em 0 0.2em 0; padding: 0; font-size: 1.6em; }
@@ -82,7 +82,7 @@ a.flickr{ background: url('../img/social/16px/flickr.png') no-repeat bottom left
 /* Content: Blog */
 .blogMini{ width: 65%; }
 
-.blogPost{}
+.blogPost{ padding-bottom: 2em; }
 
 .blogMini a, .blogPost a{}
 .blogMini a:visited, .blogPost a:visited{ color: #7F00FF; }
