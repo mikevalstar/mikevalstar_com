@@ -10,13 +10,13 @@
 	div.tc: img(src="/usrimg/node_js.png")
 	
 	:markdown
-		I have once again decided to re-write and this time in node.js, I have also decided to write the website asa tutorial for new developers for node.js as well. 
+		I have once again decided to re-write and this time in [node.js](http://nodejs.org/), I have also decided to write the website as a tutorial for new developers for node.js as well. 
 
 		Since college I have primarily been a PHP developer, building OOP websites with a combination of PHP, Smarty, PDO and other good practice techniques; however since the birth of node I followed the development of the project and more recently started using node for my production projects. Node has proved to be a great tool for rapidly creating websites both semi-static and highly interactional; it is highly responsive and is a better fit for progressively loaded pages over PHP and most other languages I have used in the past. 
 
-		When I started coding websites in the late 90s webpages were primarily rendered and produced by the web server and very little was done on the client side (flash and java applets not withstanding). In recent years with the proliferation of advanced javascript libraries such as jQuery and the browser wars re-igniting has brought forth an array of new techniques for client-side manipulation and rendering of a website. This has created shorter code-paths on the server-side pages and increased the request count for any given "page" on a website. Node.js has been built with this in mind and personally I feel is a great fit for this new and emerging web.
+		When I started coding websites in the late 90s webpages were primarily rendered and produced by the web server and very little was done on the client side (flash and java applets not withstanding). In recent years with the proliferation of advanced javascript libraries such as [jQuery](http://jquery.com/) and the browser wars re-igniting has brought forth an array of new techniques for client-side manipulation and rendering of a website. This has created shorter code-paths on the server-side pages and increased the request count for any given "page" on a website. Node.js has been built with this in mind and personally I feel is a great fit for this new and emerging web.
 
-		So here we are building a new website in node.js, we will use Express and later Mongoose with MongoDB for the creation and maintenance of this website. Heavy emphasis will be placed on progressive page loading, external tools for items like blog comments and as we progress high availability and large traffic handling.
+		So here we are building a new website in node.js, we will use [Express](http://expressjs.com/) and later [Mongoose](http://mongoosejs.com/) with [MongoDB](http://www.mongodb.org/) for the creation and maintenance of this website. Heavy emphasis will be placed on progressive page loading, external tools for items like blog comments and as we progress, high availability and large traffic handling.
 
 	h3 Getting Started
 	:markdown
@@ -24,9 +24,9 @@
 
 		For reference this project we are using the following: 
 
-		* Node.js v0.6.0 - Installation Instructions
-		* NPM v1.0.105 - Installation Instructions
-		* Express v2.5.0 - Installation Instructions
+		* [Node.js](http://nodejs.org/) v0.6.0 - [Installation Instructions](https://github.com/joyent/node/wiki/Installation)
+		* [NPM](http://npmjs.org/) v1.0.105 - [Installation Instructions](http://npmjs.org/)
+		* [Express](http://expressjs.com/) v2.5.0 - [Installation Instructions](https://github.com/visionmedia/express)
 
 		To begin we will have express generate a simple website structure including a basic template and app.js file: 
 
@@ -43,7 +43,7 @@
 
 	pre: code $ node app.js
 	:markdown
-		And you are all set, it should spit out the port the new website is running at (usually 3000) and you can surf to http://localhost:3000 to view your new website.
+		And you are all set, it should spit out the port the new website is running at (usually 3000) and you can surf to [http://localhost:3000](http://localhost:3000) to view your new website.
 
 		For production you will need to run your web server using the following command:
 
@@ -55,11 +55,11 @@
 	:markdown
 		For this site I'm going to use every new technique and buzzword technique possible on the front end to better demonstrate how to code for these designs. 
 
-		For the navigation of the website we will be using the hashbang technique for traffic routing and dynamic content loading without a full page refresh while at the same time making sure all pages have a permalink and is fully navigable by the google crawlers.
+		For the navigation of the website we will be using the [hashbang](http://en.wikipedia.org/wiki/Shebang_\(Unix\)) technique for traffic routing and dynamic content loading without a full page refresh while at the same time making sure all pages have a permalink and is fully navigable by the google crawlers.
 
-		The layout of the site is going to be using Responsive Design (yay css selectors) for the layout of the site in order to better serve larger screens and mobile devices. 
+		The layout of the site is going to be using [Responsive Design](http://www.alistapart.com/articles/responsive-web-design/) (yay css selectors) for the layout of the site in order to better serve larger screens and mobile devices. 
 
-		And later we will be implementing Lazy Loading of images and some content in order to reduce bandwidth and page loading times.
+		And later we will be implementing [Lazy Loading](http://en.wikipedia.org/wiki/Lazy_loading) of images and some content in order to reduce bandwidth and page loading times.
 
 		The use of these design techniques do not really apply directly to the backend coding so I will cover these in separate tutorials at a later date. For the purpose of this tutorial lets stick with a simple design.
 
@@ -86,7 +86,7 @@
 
 		_feel free to add more static pages as needed and to add the corresponding jade files_
 
-	h3 A SimpleDynamic Route
+	h3 A Simple Dynamic Route
 	:markdown
 		Now that we have the basic pages setup we can add in a semi-dynamic route for our blog pages.  
 
@@ -97,13 +97,13 @@
 
 	h3 The Code
 	:markdown
-		All code created for this website is available on the github page and this tutorial specifically is available here: 
+		All code created for this website is available on the [github page](https://github.com/mikevalstar/mikevalstar_com) and this tutorial specifically is available here: 
 
 	h3 Next Time
 	:markdown
-		In the next part of this series we will be adding in custom error pages. Stay Tuned...
+		In the next part of this series we will be adding in custom error pages. Please Stay Tuned...
 
-	h4 Credits / Changelog
+	//h4 Credits / Changelog
 
 #disqus_identity bp_103
 #disqus_permalink
