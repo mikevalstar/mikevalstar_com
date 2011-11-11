@@ -1,15 +1,10 @@
 /**
  * Module dependencies.
  */
- 
-require.paths.unshift(__dirname + '/lib');
-
 var express = require('express');
 var app = module.exports = express.createServer();
-var sqlite = require('sqlite');
 
 // Configuration
-
 app.configure(function(){
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
@@ -28,7 +23,7 @@ app.configure('production', function(){
 });
 
 // Internal Page Handlers
-var static_pages = require('StaticPages');
+var static_pages = require('./lib/StaticPages');
 var sp = new static_pages();
 sp.initPages(app);
 

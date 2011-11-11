@@ -93,6 +93,13 @@ a.flickr{ background: url('../img/social/16px/flickr.png') no-repeat bottom left
 
 .blogMini img, .blogPost img{ max-width: 98%; outline: 1px solid #CCC; border: 3px solid white; margin: 5px 15px; }
 
+.blogPost ul, .blogPost ol { margin: 0.3em 1.8em; }
+
+pre{ font-size: 0.8em; margin: 0.3em 3em; padding: 0.2em 1em; border: 1px solid #BBB; background: #DDD; }
+code{  }
+
+.gist{ font-size: 0.9em; margin: 0.3em 3em; }
+
 /* Content: About */
 #aboutContent{ float: left; width: 70% }
 #aboutFindMe{ float: left; width: 28%; }

@@ -5,7 +5,6 @@
   , "dependencies": {
       "express": "2.4.7"
     , "jade": ">= 0.0.1"
-    , "sqlite": ">= 0.0.1"
     , "markdown-js": ">= 0.0.1"
   }
 }
