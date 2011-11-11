@@ -9,6 +9,9 @@ var disqus_shortname = 'mikevalstar'; // required: replace example with your for
 var disqus_identifier = 'bp_0';
 var disqus_url = 'http://mikevalstar.com/';
 
+script.defaults.defer = true;
+script.defaults.base = 'http://gist.github.com';
+
 var MV = {};
 
 MV.nav = {
@@ -47,6 +50,7 @@ MV.content = {
 			if($('#disqus_thread').length == 1)
 				MV.content.loadDisqus();
 				
+			MV.content.loadGist();
 			$(document).attr('title',  $(responseText).filter('title').text());
 			
 			if(fn) fn();
@@ -64,6 +68,13 @@ MV.content = {
 		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 	
+	}
+	
+	, loadGist: function(){
+		var gists = $('.gistC');
+		$.each(gists, function(){
+			script({src: $(this).attr('id'), append: $(this).attr('id')});
+		});
 	}
 }
 

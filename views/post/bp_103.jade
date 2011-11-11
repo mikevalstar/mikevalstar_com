@@ -65,22 +65,22 @@
 
 		The base express install comes with a simple layout & page combo to get you started.  Lets start by modifying them slightly: 
 		#### layout.jade
-	script(src="https://gist.github.com/1358857.js?file=layout.jade")
+	.gistC(id="1358857.js?file=layout.jade"): script(src="https://gist.github.com/1358857.js?file=layout.jade")
 	:markdown
 		#### index.jade
-	script(src="https://gist.github.com/1358857.js?file=index.jade")
+	.gistC(id="1358857.js?file=index.jade"): script(src="https://gist.github.com/1358857.js?file=index.jade")
 
 	h3 Writing a Simple Page Router
 	:markdown
 		To start lets build a simple static page router for a few more pages of the site: 
 
 		#### lib/StaticPages.js
-	script(src="https://gist.github.com/1358857.js?file=StaticPages.js")
+	.gistC(id="1358857.js?file=StaticPages.js"): script(src="https://gist.github.com/1358857.js?file=StaticPages.js")
 	:markdown
 		And alter app.js to use this new router. 
 
 		#### app.js
-	script(src="https://gist.github.com/1358857.js?file=app.js")
+	.gistC(id="1358857.js?file=app.js"): script(src="https://gist.github.com/1358857.js?file=app.js")
 	:markdown
 		What we are doing now is loading up the StaticPage.js file as a variable "static_pages" and calling the initPages() function in order to init these new routes. 
 
@@ -91,7 +91,7 @@
 		Now that we have the basic pages setup we can add in a semi-dynamic route for our blog pages.  
 
 		#### lib/StaticPages.js
-	script(src="https://gist.github.com/1358857.js?file=StaticPagesv2.js")
+	.gistC(id="1358857.js?file=StaticPagesv2.js"): script(src="https://gist.github.com/1358857.js?file=StaticPagesv2.js")
 	:markdown
 		The ":id" and ":title" variables allow us to use portions of the URI in order to determine content and we are using them to load the blog posts from the **posts** folder located in the **views** directory
 
