@@ -40,7 +40,10 @@ MV.nav = {
 
 MV.content = {
 	  load: function(hash, fn, transform){
-		if(!hash || hash == '') return; // nothing to do
+		if(!hash || hash == ''){
+			_gaq.push(['_trackPageview']);
+			return; // nothing to do
+		}
 		
 		var url = (hash[0] == '#') ? hash.substring(2): hash;
 		
