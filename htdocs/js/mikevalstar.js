@@ -42,6 +42,8 @@ MV.content = {
 	  load: function(hash, fn, transform){
 		if(!hash || hash == '') return; // nothing to do
 		
+		var url = (hash[0] == '#') ? hash.substring(2): hash;
+		
 		MV.nav.transform(transform); // transform the navigation if needed
 		
 		$('#CC').html('Loading Content...');
@@ -54,9 +56,12 @@ MV.content = {
 			$(document).attr('title',  $(responseText).filter('title').text());
 			
 			if(fn) fn();
+			
+			// track the page view
+			if(_gaq)
+				_gaq.push(['_trackPageview', url]);
 		}
 	
-		var url = (hash[0] == '#') ? hash.substring(2): hash;
 		$('#C').load(url + ' #CC', callback);
 	}
 	
