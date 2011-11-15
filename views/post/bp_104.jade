@@ -1,0 +1,61 @@
+.blogPost
+
+	h2 
+		a(href="/Blog/104/Hashbang_URLs_and_Google") Simple Hashbang URLs and Google
+	h5 Posted on 
+		time(pubdate="2011-11-15") November 15
+			sup th
+			|  2011
+	
+	div.tc: img(src="/usrimg/bp_104_hashbang.png")
+	
+	:markdown
+		websites are increasingly becoming more and more dynamically loaded as opposed to a full page download for every page on a website. This website in particular is using Hashbang (shebang) style page loading to make page transitions more seamless; but this presents a problem both with google search and google analytics.  I'll discuss how I manage both of these problems and how you can design a website with seamless page transition as well as tracking these page changes with google analytics.
+
+		### Simple Hashbang Transition with jQuery
+	
+		The easiest method to create hashbang style navigation on an existing website without modifying any of your backend code is to do the following using the jQuery .load() method:
+
+	script(src="https://gist.github.com/1367937.js")
+	:markdown
+		_Note: this will notwork with older browsers that do not have the onHashchange function, use [this jQuery plugin](http://benalman.com/projects/jquery-hashchange-plugin/) for legacy support._
+
+		This will download the content portion (#C, in this example) and replace it on the current page. If you have no javascript that modifies the content of your page, you're done. And because you still use full and proper links on all of your pages google will still be able to index you're entire site and you are able to use permanent and unique URLs for any page.
+
+		This however does not lower your server-side load or the html download size.  Personally I like to add a post variable to the page specifying that you are doing an ajax request and using that to return a simplified page that can still be used like the above. This can be done by changing the last line in loadPage to: $('#C').load(url + ' #C', {simplePage: true} callback);
+
+		### Integrating Google Analytics
+
+		Google Analytics (by default) works by loading on each page load and using the \_gaq.push(['_trackPageview']) command to send the current URL (minus the hash) to google analytics. However you can also call this function yourself to force the page call; so lets add that to our code.  And remember to not call the _trackPageview function on your main page unless there is no hash URL available:
+
+	script(src="https://gist.github.com/1367956.js")
+	:markdown
+		_Note: you can also use this functionality to track events on your pages such as people using widgets on your site_
+
+		### Download
+		Full code in jQuery extension format with example [available here](/usrfiles/jQuery.fn.hashbang.zip) use the following to initialize:
+
+		
+
+#disqus_identity bp_104
+#disqus_permalink
+	a(href="http://mikevalstar.com/Blog/104/Hashbang_URLs_and_Google") http://mikevalstar.com/Blog/104/Hashbang_URLs_and_Google
+#disqus_thread
+
+script(type="text/javascript")
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'mikevalstar'; // required: replace example with your forum shortname
+	disqus_identifier = $('#disqus_identity').html();
+	disqus_url = $('#disqus_permalink a').attr('href');
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+
+noscript Please enable JavaScript to view the 
+	a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
+a.dsq-brlink(href="http://disqus.com")blog comments powered by 
+	span.logo-disqus Disqus

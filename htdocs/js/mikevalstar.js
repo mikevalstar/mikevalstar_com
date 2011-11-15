@@ -41,7 +41,8 @@ MV.nav = {
 MV.content = {
 	  load: function(hash, fn, transform){
 		if(!hash || hash == ''){
-			_gaq.push(['_trackPageview']);
+			if(typeof _gaq !== 'undefined')
+				_gaq.push(['_trackPageview']);
 			return; // nothing to do
 		}
 		
@@ -61,7 +62,7 @@ MV.content = {
 			if(fn) fn();
 			
 			// track the page view
-			if(_gaq)
+			if(typeof _gaq !== 'undefined')
 				_gaq.push(['_trackPageview', url]);
 		}
 	
