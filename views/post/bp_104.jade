@@ -16,7 +16,7 @@
 	
 		The easiest method to create hashbang style navigation on an existing website without modifying any of your backend code is to do the following using the jQuery .load() method:
 
-	script(src="https://gist.github.com/1367937.js")
+	.gistC(id="1367937.js"): script(src="https://gist.github.com/1367937.js")
 	:markdown
 		_Note: this will notwork with older browsers that do not have the onHashchange function, use [this jQuery plugin](http://benalman.com/projects/jquery-hashchange-plugin/) for legacy support._
 
@@ -28,7 +28,7 @@
 
 		Google Analytics (by default) works by loading on each page load and using the \_gaq.push(['_trackPageview']) command to send the current URL (minus the hash) to google analytics. However you can also call this function yourself to force the page call; so lets add that to our code.  And remember to not call the _trackPageview function on your main page unless there is no hash URL available:
 
-	script(src="https://gist.github.com/1367956.js")
+	.gistC(id="1367956.js"): script(src="https://gist.github.com/1367956.js")
 	:markdown
 		_Note: you can also use this functionality to track events on your pages such as people using widgets on your site_
 
