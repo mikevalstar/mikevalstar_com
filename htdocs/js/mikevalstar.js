@@ -1,7 +1,7 @@
-/* 
-	Welcome to my Javascript 
+/*
+	Welcome to my Javascript
 
-	Please vist mikevalstar.com for an explination 
+	Please vist mikevalstar.com for an explination
 	about how some of the below is done.
 */
 
@@ -18,17 +18,17 @@ MV.nav = {
 	  isExpanded: function(){
 	  	return $('.ex').length > 0;
 	  }
-	  
+
 	, transform: function(quick){
 		if(!MV.nav.isExpanded()) return; // already shrunk
-		
-		if(quick){ 
+
+		if(quick){
 			$('#Nav').removeClass('ex');
 			$("#NTwitter div li:not(.tweet_first)").remove();
 			$('#C').removeClass('hide');
 			return;
 		}
-		
+
 		$('#Nav>ul>li').animate({ height: '50', paddingTop: '25', paddingBottom: '25' }, 700, function(){
 			$('#Nav').removeClass('ex');
 			$("#NTwitter div li:not(.tweet_first)").remove();
@@ -45,30 +45,30 @@ MV.content = {
 				_gaq.push(['_trackPageview']);
 			return; // nothing to do
 		}
-		
+
 		var url = (hash[0] == '#') ? hash.substring(2): hash;
-		
+
 		MV.nav.transform(transform); // transform the navigation if needed
-		
+
 		$('#CC').html('Loading Content...');
-		
+
 		var callback = function(responseText, textStatus, XMLHttpRequest){
 			if($('#disqus_thread').length == 1)
 				MV.content.loadDisqus();
-				
+
 			MV.content.loadGist();
 			$(document).attr('title',  $(responseText).filter('title').text());
-			
+
 			if(fn) fn();
-			
+
 			// track the page view
 			if(typeof _gaq !== 'undefined')
 				_gaq.push(['_trackPageview', url]);
 		}
-	
+
 		$('#C').load(url + ' #CC', callback);
 	}
-	
+
 	,  loadDisqus: function(){
 		disqus_identifier = $('#disqus_identity').html();
 		disqus_url = $('#disqus_permalink a').attr('href');
@@ -76,9 +76,9 @@ MV.content = {
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	
+
 	}
-	
+
 	, loadGist: function(){
 		var gists = $('.gistC');
 		$.each(gists, function(){
@@ -92,7 +92,7 @@ $(function(){
 	// Initialize page
 	$("a").live("click", function(event){
 	    var href = $(this).attr("href");
-	    if(href[0] == "/" 
+	    if(href[0] == "/"
 			&& href.substring(href.length - 4) != '.png'
 			&& href.substring(href.length - 4) != '.jpg'
 			&& href.substring(href.length - 5) != '.jpeg'
@@ -110,10 +110,10 @@ $(function(){
         username: "mikevalstar",
         join_text: "auto",
         avatar_size: 48,
-        count: $('#Nav.ex').length || (location.hash && location.hash != '') == 0 ? 1 : 6,
+        count: $('#Nav.ex').length == 0 || (location.hash && location.hash != '') ? 1 : 6,
         loading_text: "loading tweets..."
     });
-    
+
     // initialize the hash lookup
     $(window).hashchange( function(){
 		MV.content.load( location.hash );
