@@ -1,9 +1,9 @@
 {
-    "name": "application-name"
-  , "version": "0.0.1"
+    "name": "mikevalstar.com website"
+  , "version": "0.0.2"
   , "private": true
   , "dependencies": {
-      "express": "2.4.7"
+      "express": ">= 2.5.0"
     , "jade": ">= 0.0.1"
     , "markdown-js": ">= 0.0.1"
   }
