@@ -14,18 +14,37 @@ app.configure(function(){
   app.use(express.static(__dirname + '/htdocs'));
 });
 
+var error = require('./lib/ErrorHandler');
+
 app.configure('development', function(){
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  //app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+	app.use(error({ showMessage: true, dumpExceptions: true, showStack: true, logErrors: __dirname + '/log/error_log' }));
 });
 
 app.configure('production', function(){
-  app.use(express.errorHandler()); 
+  //app.use(express.errorHandler()); 
+	app.use(error());
 });
 
 // Internal Page Handlers
 var static_pages = require('./lib/StaticPages');
 var sp = new static_pages();
 sp.initPages(app);
+
+// 404 Page
+app.use(function(req, res, next){
+	res.writeHead(404);
+	res.render('404.jade', {title: "404 - Page Not Found", showFullNav: false, status: 404, url: req.url });
+});
+
+// Example error pages
+app.get('/ErrorExample', function(req, res, next){
+	next(new Error('keyboard cat!')); // trigger an error
+});
+
+app.get('/ErrorExample2', function(req, res){
+	res.render('404.jade'); // force an error.. we did not set the title
+});
 
 
 app.listen(3000);

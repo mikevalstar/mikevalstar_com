@@ -1,0 +1,85 @@
+2011-11-17T19:08:47.450Z - Error Happened: 
+Error: keyboard cat!
+    at /Users/mikevalstar/Dropbox/Public/mv_app/app.js:44:8
+    at callbacks (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:272:11)
+    at param (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:246:11)
+    at pass (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:253:5)
+    at Router._dispatch (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:280:4)
+    at Object.handle (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:45:10)
+    at next (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/http.js:201:15)
+    at Object.methodOverride [as handle] (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:35:5)
+    at next (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/http.js:201:15)
+    at Object.bodyParser [as handle] (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/middleware/bodyParser.js:59:61)2011-11-17T19:08:58.254Z - Error Happened: 
+Error: keyboard cat!
+    at /Users/mikevalstar/Dropbox/Public/mv_app/app.js:44:8
+    at callbacks (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:272:11)
+    at param (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:246:11)
+    at pass (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:253:5)
+    at Router._dispatch (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:280:4)
+    at Object.handle (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:45:10)
+    at next (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/http.js:201:15)
+    at Object.methodOverride [as handle] (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:35:5)
+    at next (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/http.js:201:15)
+    at Object.bodyParser [as handle] (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/middleware/bodyParser.js:59:61)2011-11-17T19:09:09.524Z - Error Happened: 
+Error: keyboard cat!
+    at /Users/mikevalstar/Dropbox/Public/mv_app/app.js:44:8
+    at callbacks (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:272:11)
+    at param (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:246:11)
+    at pass (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:253:5)
+    at Router._dispatch (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:280:4)
+    at Object.handle (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:45:10)
+    at next (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/http.js:201:15)
+    at Object.methodOverride [as handle] (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:35:5)
+    at next (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/http.js:201:15)
+    at Object.bodyParser [as handle] (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/middleware/bodyParser.js:59:61)2011-12-09T18:33:18.956Z - Error Happened: 
+ReferenceError: /Users/mikevalstar/Dropbox/Public/mv_app/views/layout.jade:4
+    2| html(lang="en")
+    3| 	head
+  > 4| 		title #{title} - Mike Valstar - Programming &amp; Web Development
+    5| 		link(rel='stylesheet', href='/css/css.css')
+    6| 		
+    7| 		script(src='http://code.jquery.com/jquery-1.7.min.js', type='text/javascript')
+
+title is not defined
+    at eval at <anonymous> (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/jade/lib/jade.js:165:3)
+    at Object.<anonymous> (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/jade/lib/jade.js:166:12)
+    at ServerResponse._render (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/view.js:422:21)
+    at ServerResponse.render (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/view.js:315:17)
+    at ServerResponse._render (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/view.js:429:10)
+    at ServerResponse.render (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/view.js:315:17)
+    at /Users/mikevalstar/Dropbox/Public/mv_app/app.js:36:7
+    at callbacks (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:272:11)
+    at param (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:246:11)
+    at pass (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:253:5)
+2011-12-09T18:34:11.142Z - Error Happened: 
+Error: keyboard cat!
+    at /Users/mikevalstar/Dropbox/Public/mv_app/app.js:44:8
+    at callbacks (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:272:11)
+    at param (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:246:11)
+    at pass (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:253:5)
+    at Router._dispatch (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:280:4)
+    at Object.handle (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:45:10)
+    at next (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/http.js:203:15)
+    at Object.methodOverride [as handle] (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:35:5)
+    at next (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/http.js:203:15)
+    at Object.bodyParser [as handle] (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/node_modules/connect/lib/middleware/bodyParser.js:85:61)
+2011-12-09T18:36:52.500Z - Error Happened: 
+ReferenceError: /Users/mikevalstar/Dropbox/Public/mv_app/views/layout.jade:4
+    2| html(lang="en")
+    3| 	head
+  > 4| 		title #{title} - Mike Valstar - Programming &amp; Web Development
+    5| 		link(rel='stylesheet', href='/css/css.css')
+    6| 		
+    7| 		script(src='http://code.jquery.com/jquery-1.7.min.js', type='text/javascript')
+
+title is not defined
+    at eval at <anonymous> (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/jade/lib/jade.js:165:3)
+    at Object.<anonymous> (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/jade/lib/jade.js:166:12)
+    at ServerResponse._render (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/view.js:422:21)
+    at ServerResponse.render (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/view.js:315:17)
+    at ServerResponse._render (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/view.js:429:10)
+    at ServerResponse.render (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/view.js:315:17)
+    at /Users/mikevalstar/Dropbox/Public/mv_app/app.js:36:7
+    at callbacks (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:272:11)
+    at param (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:246:11)
+    at pass (/Users/mikevalstar/Dropbox/Public/mv_app/node_modules/express/lib/router/index.js:253:5)
