@@ -1,0 +1,85 @@
+.blogPost
+
+	h2 
+		a(href="/Blog/105/Coding_with_Node.js_Part_2_Error_Handling_and_404_pages_with_Express") Coding with Node.js: Part 2; Error Handling and 404 pages with Express.
+	h5 Posted on 
+		time(pubdate="2012-01-18") January 18
+			sup th
+			|  2012
+	
+	div.tc: img(src="/usrimg/node_js.png")
+	
+	:markdown
+		_See [Coding with Node.js: Part 1; Getting started with Express.](/Blog/103/Coding_with_Node.js_Part_1_Getting_started_with_Express) for the beginning of this tutorial series._
+
+		The next step for coding a website (for me) is to setup the error and 404 pages. The 404 page to be used to display something useful to the user when something cannot be found. A nice error page can also be helpful in debugging and for informing the general public that an error has occurred on your website.
+		
+	h3 The 404 page
+	:markdown
+		The 404 page for the purpose of this tutorial will be a simple 404.jade file. Feel free to make this page look however you would like. 	 
+		
+		#### App.js
+		In the App.js file you need to add a handler for not found pages, this is done by registering with express a function that accepts 3 arguments without the usual page identifier:
+		
+	.gistC(id="1633553.js"): script(src="https://gist.github.com/1633553.js")
+	:markdown
+		This is all that is needed and your new 404 page will show in the event of any file or page not being found.
+		
+		#### Example
+		An example of this page can be found by going to [/404Error](/404error) or by typing some gibberish into URL
+	h3 Displaying Errors
+	:markdown
+		The next item you will want to do is to display any page errors that occur in a meaningful way for testing, and as a way to alert the user that something has gone wrong. Express allows you to set both a production and a development level of error capturing, logging  and whatever.
+		
+		To start with this section I used the default error handler as a starting example. [See here](https://github.com/senchalabs/connect/blob/master/lib/middleware/errorHandler.js) for the default error handler class for Express, and is provided by [Connect](https://github.com/senchalabs/connect)
+		
+		#### ErrorHandler.js
+		Based on the error handler provided by connect I built the following:
+		
+	.gistC(id="1633632.js"): script(src="https://gist.github.com/1633632.js")
+	:markdown
+		I have with this error handler I have converted over to using the express render stack for displaying html pages instead of reading files directly and have added the ability to set options for the error handler including the ability to log errors to a file. 
+		
+		The example above does have one flaw, that if there is an error with one of the core components it will have trouble rendering and may cause problems. These errors should still be spinout to the console (and optionally the log file) and should be solvable. Additionally a try/catch could be thrown around the render stack with an irrecoverable error displayed; I'll leave this up to the reader if they wish to implement it (I will be doing so at a later date).
+		
+		#### App.js
+		Now to use the new error handler we need to change the app.js file to register the new error handler and to give us a couple example pages. 
+		
+	.gistC(id="1633706.js"): script(src="https://gist.github.com/1633706.js")
+	:markdown
+		This will register the error handler for use with both a dev environment and a production one. Also included is 2 examples of triggering an error.
+		
+		#### Example
+		
+		You can check out the the 2 types of errors included in the above by visiting [/ErrorExample](/ErrorExample) or [/ErrorExample2](/ErrorExample2).
+	h3 The Code
+	:markdown
+		All code created for this website is available on the [github page](https://github.com/mikevalstar/mikevalstar_com) and this tutorial specifically is available here: [https://github.com/mikevalstar/mikevalstar\_com/tree/Node\_Tutorial\_pt2](https://github.com/mikevalstar/mikevalstar_com/tree/Node_Tutorial_pt2)
+	h3 Next Time
+	:markdown
+		In the next part of this series I will be connecting up the project to a database. Please Stay Tuned...
+
+	//h4 Credits / Changelog
+
+#disqus_identity bp_105
+#disqus_permalink
+	a(href="http://mikevalstar.com/Blog/105/Coding_with_Node.js_Part_2_Error_Handling_and_404_pages_with_Express") http://mikevalstar.com/Blog/105/Coding_with_Node.js_Part_2_Error_Handling_and_404_pages_with_Express
+#disqus_thread
+
+script(type="text/javascript")
+	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	var disqus_shortname = 'mikevalstar'; // required: replace example with your forum shortname
+	disqus_identifier = $('#disqus_identity').html();
+	disqus_url = $('#disqus_permalink a').attr('href');
+	
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+
+noscript Please enable JavaScript to view the 
+	a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
+a.dsq-brlink(href="http://disqus.com")blog comments powered by 
+	span.logo-disqus Disqus
