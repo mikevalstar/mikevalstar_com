@@ -119,6 +119,17 @@ code{  }
 #aboutFindMe ul li a.stackoverflow{ background: url('../img/social/32px/stackoverflow.png') no-repeat; }
 #aboutFindMe ul li a.flickr{ background: url('../img/social/32px/flickr.png') no-repeat; }
 
+/* Content: Login Block */
+.loginform{ margin: auto; width: 340px; border: 1px solid #BBB; background: #DDD; border-radius: 4px; padding: 0.1em 1em; }
+.loginform h3{ padding: 0; margin: 0; }
+.loginform input[type="text"], .loginform input[type="password"]{ width: 240px; font-size: 1.05em; }
+.loginform button, .loginform input[type="button"], .loginform input[type="submit"]{ cursor: pointer; background: #777; border: none; border-radius: 20px; color: #ffffff; display: inline-block; font-size: 1em; font-weight: bold; letter-spacing: 1px; margin: 0.5em 0; padding: 7px 25px; text-transform: uppercase; }
+.loginform > form > span{ display: inline-block; width: 90px; }
+
+/* Content: Error Block */
+div.error{ border: 1px solid #99432e; background: #99432e; padding: 0.45em 1em; margin: 0.5em 0; border-radius: 4px; color: white; }
+div.error span{ padding: 0.3em 1em; }
+
 /* Content: Misc */
 #disqus_identity{ display: none; }
 #disqus_permalink{ display: none; }

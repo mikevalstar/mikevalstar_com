@@ -1,0 +1,21 @@
+h2 Admin - Login
+
+div.loginform
+	form(method="post")
+		h3 Login
+		
+		- if(typeof(error_text) != 'undefined')
+			div.error
+				span=error_text
+		
+		span Login
+		- if(typeof(email) != 'undefined')
+			input(type="text", name="email", value=email)
+		- else
+			input(type="text", name="email")
+		br
+		span Password
+		input(type="password", name="password")
+		br
+		span &nbsp;
+		input(type="submit", value="Login")

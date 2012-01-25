@@ -2,7 +2,8 @@
  * Module dependencies.
  */
 var express = require('express');
-var app = module.exports = express.createServer();
+var app = module.exports = express.createServer(express.cookieParser()
+												,express.session({ secret: "mv secret" }));
 
 // Configuration
 app.configure(function(){
@@ -14,6 +15,7 @@ app.configure(function(){
   app.use(express.static(__dirname + '/htdocs'));
 });
 
+// Error Handling
 var error = require('./lib/ErrorHandler');
 
 app.configure('development', function(){
@@ -26,10 +28,19 @@ app.configure('production', function(){
 	app.use(error());
 });
 
+// Database
+var Database = require('./lib/Database');
+var db = new Database();
+db.connect('mongodb://localhost/mv');
+
 // Internal Page Handlers
 var static_pages = require('./lib/StaticPages');
 var sp = new static_pages();
 sp.initPages(app);
+
+var admin_pages = require('./lib/AdminPages');
+var ap = new admin_pages();
+ap.initPages(app, db);
 
 // 404 Page
 app.use(function(req, res, next){

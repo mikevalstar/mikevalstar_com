@@ -1,10 +1,11 @@
 {
     "name": "mikevalstar.com website"
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "private": true
   , "dependencies": {
       "express": ">= 2.5.0"
     , "jade": ">= 0.0.1"
     , "markdown-js": ">= 0.0.1"
+    , "mongoose": ">= 2.4.0"
   }
 }
