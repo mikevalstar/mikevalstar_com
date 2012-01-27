@@ -1,0 +1,91 @@
+.blogPost
+
+	h2 
+		a(href="/Blog/106/Coding_with_Node.js_Part_3_Admin_Login_With_Mongo_Mongoose") Coding with Node.js: Part 3; Admin login with Mongo &amp; Mongoose.
+	h5 Posted on 
+		time(pubdate="2012-01-27") January 27
+			sup th
+			|  2012
+	
+	div.tc: img(src="/usrimg/node_js.png")
+	
+	:markdown
+		_See [Coding with Node.js: Part 1; Getting started with Express.](/Blog/103/Coding_with_Node.js_Part_1_Getting_started_with_Express) for the beginning of this tutorial series._
+	
+		Now that we have a working website model with error pages and some useful content the next step is to connect to a database so that we can later administer the content of the website and store it in the database.
+	
+		For this tutorial we are going to setup a simple login system into mongo with the help of mongoose. In the next tutorial add in the blog posts to the database.
+	
+		### Adding Mongoose to the Project
+		First thing we need to do is add mongoose to the project. This is done by editing the package.json file and adding the dependancy:
+		#### package.json
+		
+	.gistC(id="1689312.js?file=package.json"): script(src="https://gist.github.com/1689312.js?file=package.json")
+	:markdown
+		### Setting up Mongo
+		Next what we need is MongoDB installed on your system, you can visit [http://www.mongodb.org/](http://www.mongodb.org/) for instructions on getting Mongo setup.
+		
+		### Database Object
+		Mongo does is a nosql database and also does not have a set design for the tables (or collections as they are called in mongo) so you will need to define how you wish for your data to look programmatically. (this also allows for quick and easy changes to the structure later)
+		
+		For defining the structure and to setup all the needed models for the database we will create a database object.
+		
+		#### Database.js
+	.gistC(id="1689312.js?file=database.js"): script(src="https://gist.github.com/1689312.js?file=database.js")
+	:markdown
+		This will allow us to connect to the database then create all the needed schemas and models for the project on load. As well as retrieve the models later for use with retrieving rows/documents and saving the same.
+		
+		### Connecting to Mongo
+		Now that we have a db object we can add this to app.js to have it connect to the database on load.
+		
+		#### app.js
+	.gistC(id="1689312.js?file=app.1.js"): script(src="https://gist.github.com/1689312.js?file=app.1.js")
+	:markdown
+		### Creating a User
+		For adding users into the database I have chosen to do this via a script file so that adding the first user is easy and because this should be a rare task. 
+		
+		#### addUser.js
+	.gistC(id="1689312.js?file=addUser.js"): script(src="https://gist.github.com/1689312.js?file=addUser.js")
+	:markdown
+		With the above file we first read the command line arguments then if the parameter count is sufficient we can then add a user to the database. It's as easy as that.
+		
+		Example:
+	pre: code $ node addUser.js mikevalstar@gmail.com mypassword
+	:markdown
+		### Admin Pages
+		With the database created, connected and a user added we're ready to setup some admin pages to allow us to login.
+		
+		#### admin/login.jade
+	.gistC(id="1689312.js?file=login.jade"): script(src="https://gist.github.com/1689312.js?file=login.jade")
+	:markdown
+		#### admin/index.jade
+	.gistC(id="1689312.js?file=index.jade"): script(src="https://gist.github.com/1689312.js?file=index.jade")
+	:markdown
+		#### css.css
+	.gistC(id="1689312.js?filecss.css"): script(src="https://gist.github.com/1689312.js?file=css.css")
+	:markdown
+		The above are pretty simple pages, I've setup the index to simply say you are logged in, and produced login page.  They should be pretty self explanatory.
+		
+		### The Admin Page Controller
+		Now to display these pages we are going to require a little more logic then we previously used in the StaticPages.js file.  Below I have setup a class function for each page to handle the individual pages.
+		
+		#### AdminPages.js
+	.gistC(id="1689312.js?file=AdminPages.js"): script(src="https://gist.github.com/1689312.js?file=AdminPages.js")
+	:markdown
+		Above most of the logic so far is in the pageLoginPost function and we determine the way the page will display depending on the status of the posted contents (the login and the password).
+		
+		In the _checkLogin function we check if a user is logged in and redirect them to the login page if they are not. 
+		
+		### Adding Session Support &amp; The Admin Pages
+		Finally to get these pages to work we will need to add to the express object support for sessions and cookies. Also we will add in support for the AdminPages object.
+		
+		#### app.js
+	.gistC(id="1689312.js?file=app.2.js"): script(src="https://gist.github.com/1689312.js?file=app.2.js")
+	:markdown
+		With all the above code in place you should now be able to access /Admin of the website and attempt to login to the website.
+		
+		## The Code
+		All code created for this website is available on the [github page](https://github.com/mikevalstar/mikevalstar_com) and this tutorial specifically is available here: [https://github.com/mikevalstar/mikevalstar\_com/tree/Node\_Tutorial\_pt3](https://github.com/mikevalstar/mikevalstar_com/tree/Node_Tutorial_pt3)
+		
+		## Next Time
+		In the next part of this series I will be adding in a blog post list and editor.
