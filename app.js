@@ -1,9 +1,11 @@
 /**
  * Module dependencies.
  */
-var express = require('express');
+var   express = require('express')
+	, mongoStore = require('connect-mongodb');
+	
 var app = module.exports = express.createServer(express.cookieParser()
-												,express.session({ secret: "mv secret" }));
+												,express.session({ store: mongoStore('mongodb://localhost/mv'), secret: "mv secret" }));
 
 // Configuration
 app.configure(function(){

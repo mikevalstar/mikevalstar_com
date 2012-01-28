@@ -7,5 +7,6 @@
     , "jade": ">= 0.0.1"
     , "markdown-js": ">= 0.0.1"
     , "mongoose": ">= 2.4.0"
+    , "connect-mongodb": ">= 1.0"
   }
 }
