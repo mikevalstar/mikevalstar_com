@@ -2,10 +2,10 @@
  * Module dependencies.
  */
 var   express = require('express')
+	, mongoServer = require('mongodb').Server
 	, mongoStore = require('connect-mongodb');
 	
-var app = module.exports = express.createServer(express.cookieParser()
-												,express.session({ store: mongoStore('mongodb://localhost/mv'), secret: "mv secret" }));
+var app = module.exports = express.createServer();
 
 // Configuration
 app.configure(function(){
@@ -13,6 +13,10 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.cookieParser());
+  
+  server_config = new mongoServer('localhost', 27017, {auto_reconnect: true, native_parser: true})
+  app.use(express.session({ store: new mongoStore(server_config), secret: "mv secret" }));
   app.use(app.router);
   app.use(express.static(__dirname + '/htdocs'));
 });
