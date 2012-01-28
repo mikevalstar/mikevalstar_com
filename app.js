@@ -2,25 +2,26 @@
  * Module dependencies.
  */
 var   express = require('express')
-	, mongoDb = require('mongodb').Db
-	, mongoServer = require('mongodb').Server
-	, mongoStore = require('connect-mongodb');
+	, mongoStore = require('session-mongoose');
 	
 var app = module.exports = express.createServer();
 
 // Configuration
 app.configure(function(){
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.bodyParser());
-  app.use(express.methodOverride());
-  app.use(express.cookieParser());
-  
-  //server_config = new mongoServer('localhost', 27017, {auto_reconnect: true, native_parser: true});
-  //new mongoDb('mv', server_config, {});
-  app.use(express.session({  secret: "mv secret" }));
-  app.use(app.router);
-  app.use(express.static(__dirname + '/htdocs'));
+	app.set('views', __dirname + '/views');
+	app.set('view engine', 'jade');
+	app.use(express.bodyParser());
+	app.use(express.methodOverride());
+	app.use(express.cookieParser());
+	
+	var mongooseSessionStore = new mongoStore({
+	    url: "mongodb://localhost/mv",
+	    interval: 120000 
+	});
+	
+	app.use(express.session( {cookie: {maxAge: 120000}, store: mongooseSessionStore, secret: "mv secret" }));
+	app.use(app.router);
+	app.use(express.static(__dirname + '/htdocs'));
 });
 
 // Error Handling
