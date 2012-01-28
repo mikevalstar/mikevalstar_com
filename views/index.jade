@@ -2,6 +2,25 @@ h2 Blog
 
 .blogMini
 	h3 
+		a(href="/Blog/107/Coding_with_Node.js_Part_3.1_Admin_Login_With_Mongo_Mongoose") Coding with Node.js: Part 3.1; Mongoose Sessions.
+	h5 Posted on 
+		time(datetime="2012-01-28") January 28
+			sup th
+			|  2012
+	
+	div.tc: img(src="/usrimg/node_js.png")
+	
+	:markdown
+		This is a supplemental post to the previous tutorial to add in session handling into Mongo. You may have noticed after the last tutorial that when running the code in production you are alerted that Connect does not recommend the use of in-memory session storage for productions systems.
+	
+		Node is intended to be run as multiple processes on a larger production system and memory cannot be shared between these processes directly, so we will move the session storage to Mongo using session-mongoose.
+
+
+	p.tr: a(href="/Blog/107/Coding_with_Node.js_Part_3.1_Admin_Login_With_Mongo_Mongoose") Read More…
+
+
+.blogMini
+	h3 
 		a(href="/Blog/106/Coding_with_Node.js_Part_3_Admin_Login_With_Mongo_Mongoose") Coding with Node.js: Part 3; Admin login with Mongo &amp; Mongoose.
 	h5 Posted on 
 		time(datetime="2012-01-27") January 27

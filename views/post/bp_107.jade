@@ -1,0 +1,33 @@
+.blogPost
+
+	h2 
+		a(href="/Blog/107/Coding_with_Node.js_Part_3.1_Admin_Login_With_Mongo_Mongoose") Coding with Node.js: Part 3.1; Mongoose Sessions.
+	h5 Posted on 
+		time(pubdate="2012-01-28") January 28
+			sup th
+			|  2012
+	
+	div.tc: img(src="/usrimg/node_js.png")
+	
+	:markdown
+		_See [Coding with Node.js: Part 1; Getting started with Express.](/Blog/103/Coding_with_Node.js_Part_1_Getting_started_with_Express) for the beginning of this tutorial series._
+	
+		This is a supplemental post to the previous tutorial to add in session handling into Mongo. You may have noticed after the last tutorial that when running the code in production you are alerted that Connect does not recommend the use of in-memory session storage for productions systems.
+	
+		Node is intended to be run as multiple processes on a larger production system and memory cannot be shared between these processes directly, so we will move the session storage to Mongo using session-mongoose.
+	
+		## Adding session-mongoose
+		
+		To add in mongoose handling of your sessions you will need to install the session-mongoose package with npm (make sure to add to your package.json file) and specify the database to connect to.
+		
+		This is done as demonstrated below, at the same time I rearranged some of the code in the app.js file to be a little easier to follow:
+		
+		#### app.js
+	.gistC(id="1696049.js?file=app.js"): script(src="https://gist.github.com/1696049.js?file=app.js")
+	:markdown
+		## Final Thoughts
+		
+		You may want to play with the session timeouts to better fit your application.
+		
+		## The Code
+		All code created for this website is available on the [github page](https://github.com/mikevalstar/mikevalstar_com) and this tutorial specifically is available here: [https://github.com/mikevalstar/mikevalstar\_com/tree/Node\_Tutorial\_pt3.1](https://github.com/mikevalstar/mikevalstar_com/tree/Node_Tutorial_pt3.1)
