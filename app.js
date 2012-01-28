@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 var   express = require('express')
+	, mongoDb = require('mongodb').Db
 	, mongoServer = require('mongodb').Server
 	, mongoStore = require('connect-mongodb');
 	
@@ -15,8 +16,9 @@ app.configure(function(){
   app.use(express.methodOverride());
   app.use(express.cookieParser());
   
-  server_config = new mongoServer('localhost', 27017, {auto_reconnect: true, native_parser: true})
-  app.use(express.session({ store: new mongoStore(server_config), secret: "mv secret" }));
+  //server_config = new mongoServer('localhost', 27017, {auto_reconnect: true, native_parser: true});
+  //new mongoDb('mv', server_config, {});
+  app.use(express.session({  secret: "mv secret" }));
   app.use(app.router);
   app.use(express.static(__dirname + '/htdocs'));
 });
