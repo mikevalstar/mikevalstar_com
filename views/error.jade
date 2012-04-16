@@ -48,7 +48,7 @@ body#mikevalstar
 			#CC
 				h2 500 Error
 
-				- if(stack)
+				- if(typeof(stack) != 'undefined')
 					pre: code.stack!=stack
 				- else
 					There was an error rendering this page. Sorry for the inconvenience.

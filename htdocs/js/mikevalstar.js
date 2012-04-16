@@ -97,6 +97,7 @@ $(function(){
 			&& href.substring(href.length - 4) != '.jpg'
 			&& href.substring(href.length - 5) != '.jpeg'
 			&& href.substring(href.length - 4) != '.gif'
+			&& href.substring(0,7) != '/Admin/'
 			&& !(href.indexOf('usrimg') > 0)
 			&& !(href.indexOf('usrfiles') > 0)
 				){

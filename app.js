@@ -16,10 +16,10 @@ app.configure(function(){
 	
 	var mongooseSessionStore = new mongoStore({
 	    url: "mongodb://localhost/mv",
-	    interval: 120000 
+	    interval: 1200000
 	});
 	
-	app.use(express.session( {cookie: {maxAge: 120000}, store: mongooseSessionStore, secret: "mv secret" }));
+	app.use(express.session( {cookie: {maxAge: 1200000}, store: mongooseSessionStore, secret: "mv secret" }));
 	app.use(app.router);
 	app.use(express.static(__dirname + '/htdocs'));
 });

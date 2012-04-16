@@ -134,6 +134,11 @@ div.error span{ padding: 0.3em 1em; }
 #disqus_identity{ display: none; }
 #disqus_permalink{ display: none; }
 
+/* Content: Admin */
+.aPostList{ width: 100%; border-collapse: collapse; margin: 15px 0; }
+.aPostList th{}
+.aPostList td{border: 1px solid #CCC; padding: 3px 7px;}
+
 /* Footer */
 #F{ margin-top: 3em; font-weight: bold; padding-left: 5em; font-size: 0.9em; text-transform: uppercase; color: #B4B4B4; }
 

@@ -1,7 +1,7 @@
 h2 Admin - Login
 
 div.loginform
-	form(method="post")
+	form(method="post", action="/Admin/Login")
 		h3 Login
 		
 		- if(typeof(error_text) != 'undefined')
