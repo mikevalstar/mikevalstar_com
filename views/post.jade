@@ -5,10 +5,19 @@
 	h5 Posted on 
 		time(datetime=post.posted) #{post.posted_human}
 	
-	div.tc: img(src=post.img_lg)
+	- if(post.img_lg != '')
+		div.tc: img(src=post.img_lg)
 	
-	!=post.content
-
+	- if(post.content == ''){
+		!=post.short
+	- } else {
+		!=post.content
+	- }
+	
+	- if(post.ext_link != "")
+		.ext_link Read more: 
+			a(href=post.ext_link) #{post.ext_link}
+			
 #disqus_identity bp_#{post.sid}
 #disqus_permalink
 	a(href="http://mikevalstar.com/Blog/#{post.sid}/#{post.link_title}") http://mikevalstar.com/Blog/#{post.sid}/#{post.link_title}

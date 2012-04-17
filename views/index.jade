@@ -3,12 +3,23 @@ h2 Blog
 - posts.forEach(function(item){
 	.blogMini
 		h3
-			a(href="/Blog/#{item.sid}/#{item.link_title}") #{item.title}
+			- if(item.ext_link != ""){
+				a(href=item.ext_link) #{item.title}
+			- }else{
+				a(href="/Blog/#{item.sid}/#{item.link_title}") #{item.title}
+			- }
 		h5 Posted on 
-			time(datetime=item.posted) #{item.posted_human}		
-		div.tc: img(src=item.img_sm)
+			time(datetime=item.posted) #{item.posted_human}	
+			
+		- if(item.img_sm != '')
+			div.tc: img(src=item.img_sm)
 		
 		!=item.short
 		
-		p.tr: a(href="/Blog/#{item.sid}/#{item.link_title}") Read More…
+		- if(item.ext_link != ""){
+			p.tr.small: a(href="/Blog/#{item.sid}/#{item.link_title}") Permalink
+		- }else{
+			p.tr: a(href="/Blog/#{item.sid}/#{item.link_title}") Read More…
+		- }
+		
 - })
