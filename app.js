@@ -1,6 +1,7 @@
 /**
  * Module dependencies.
  */
+process.env.TZ = 'GMT';
 var   express = require('express')
 	, mongoStore = require('session-mongoose');
 	
@@ -50,6 +51,10 @@ sp.initPages(app);
 var admin_pages = require('./lib/AdminPages');
 var ap = new admin_pages();
 ap.initPages(app, db);
+
+var public_pages = require('./lib/PublicPages');
+var pp = new public_pages();
+pp.initPages(app, db);
 
 // 404 Page
 app.use(function(req, res, next){

@@ -71,7 +71,7 @@ MV.content = {
 
 	,  loadDisqus: function(){
 		disqus_identifier = $('#disqus_identity').html();
-		disqus_url = $('#disqus_permalink a').attr('href');
+		disqus_url = $('#disqus_permalink a').attr('href');console.info("inserting");
 		/* * * DON'T EDIT BELOW THIS LINE * * */
 		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
