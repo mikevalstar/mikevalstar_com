@@ -1,25 +1,43 @@
-h2 Blog
-
-- posts.forEach(function(item){
-	.blogMini
-		h3
-			- if(item.ext_link != ""){
-				a(href=item.ext_link) #{item.title}
-			- }else{
-				a(href="/Blog/#{item.sid}/#{item.link_title}") #{item.title}
-			- }
-		h5 Posted on 
-			time(datetime=item.posted) #{item.posted_human}	
-			
-		- if(item.img_sm != '')
-			div.tc: img(src=item.img_sm)
-		
-		!=item.short
-		
-		- if(item.ext_link != ""){
-			p.tr.small: a(href="/Blog/#{item.sid}/#{item.link_title}") Permalink
-		- }else{
-			p.tr: a(href="/Blog/#{item.sid}/#{item.link_title}") Read More…
+#blogtoolbar
+	h3 Archive
+	
+	ul
+		- if(months && months.length > 0){
+			- months.forEach(function(item){
+				li 
+					a(href="/Blog/#{item.value.year}/#{item.value.month}") #{item.value.year} - #{month_names[item.value.month]}
+					small &nbsp;(#{item.value.count})
+			- });
 		- }
-		
-- })
+	
+	.clear
+	
+h2 Blog
+	
+- if(posts && posts.length > 0){
+	- posts.forEach(function(item){
+		.blogMini
+			h3
+				- if(item.ext_link != ""){
+					a(href=item.ext_link) #{item.title}
+				- }else{
+					a(href="/Blog/#{item.sid}/#{item.link_title}") #{item.title}
+				- }
+			h5 Posted on 
+				time(datetime=item.posted) #{item.posted_human}	
+				
+			- if(item.img_sm != '')
+				div.tc: img(src=item.img_sm)
+			
+			!=item.short
+			
+			- if(item.ext_link != ""){
+				p.tr.small: a(href="/Blog/#{item.sid}/#{item.link_title}") Permalink
+			- }else{
+				p.tr: a(href="/Blog/#{item.sid}/#{item.link_title}") Read More…
+			- }
+			
+	- })
+- }else{
+em No posts could be found.
+- }
