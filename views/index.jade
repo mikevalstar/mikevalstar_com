@@ -38,6 +38,19 @@ h2 Blog
 			- }
 			
 	- })
+	
+	- if(nextpage){
+		.fr
+			a(href="/Blog/#{nextpage}") Next &raquo;
+	- }
+	
+	- if(prevpage){
+		.fl
+			a(href="/Blog/#{prevpage}") &laquo; Previous
+	- }
+	
+	.clear
+	
 - }else{
 em No posts could be found.
 - }
