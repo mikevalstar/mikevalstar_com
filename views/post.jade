@@ -1,42 +1,46 @@
-.blogPost
-	
-	h2 
-		a(href="/Blog/#{post.sid}/#{post.link_title}") #{post.title}
-	h5 Posted on 
-		time(datetime=post.posted) #{post.posted_human}
-	
-	- if(post.img_lg != '')
-		div.tc: img(src=post.img_lg)
-	
-	- if(post.content == ''){
-		!=post.short
-	- } else {
-		!=post.content
-	- }
-	
-	- if(post.ext_link != "")
-		.ext_link Read more: 
-			a(href=post.ext_link) #{post.ext_link}
-			
-#disqus_identity bp_#{post.sid}
-#disqus_permalink
-	a(href="http://mikevalstar.com/Blog/#{post.sid}/#{post.link_title}") http://mikevalstar.com/Blog/#{post.sid}/#{post.link_title}
-#disqus_thread
+extends layout
 
-script(type="text/javascript")
-	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	var disqus_shortname = 'mikevalstar'; // required: replace example with your forum shortname
-	disqus_identifier = $('#disqus_identity').html();
-	disqus_url = $('#disqus_permalink a').attr('href');
-	
-	/* * * DON'T EDIT BELOW THIS LINE * * */
-	(function() {
-		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
+block content
 
-noscript Please enable JavaScript to view the 
-	a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
-a.dsq-brlink(href="http://disqus.com")blog comments powered by 
-	span.logo-disqus Disqus
+    .blogPost
+        
+        h2 
+            a(href="/Blog/#{post.sid}/#{post.link_title}") #{post.title}
+        h5 Posted on 
+            time(datetime=post.posted) #{post.posted_human}
+        
+        - if(post.img_lg != '')
+            div.tc: img(src=post.img_lg)
+        
+        - if(post.content == ''){
+            !=post.short
+        - } else {
+            !=post.content
+        - }
+        
+        - if(post.ext_link != "")
+            .ext_link Read more: 
+                a(href=post.ext_link) #{post.ext_link}
+                
+    #disqus_identity bp_#{post.sid}
+    #disqus_permalink
+        a(href="http://mikevalstar.com/Blog/#{post.sid}/#{post.link_title}") http://mikevalstar.com/Blog/#{post.sid}/#{post.link_title}
+    #disqus_thread
+    
+    script(type="text/javascript")
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'mikevalstar'; // required: replace example with your forum shortname
+        disqus_identifier = $('#disqus_identity').html();
+        disqus_url = $('#disqus_permalink a').attr('href');
+        
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    
+    noscript Please enable JavaScript to view the 
+        a(href="http://disqus.com/?ref_noscript") comments powered by Disqus.
+    a.dsq-brlink(href="http://disqus.com")blog comments powered by 
+        span.logo-disqus Disqus

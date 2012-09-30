@@ -1,56 +1,56 @@
 !!! 5
 html(lang="en")
 head
-	title Error - Mike Valstar - Programming &amp; Web Development
-	link(rel='stylesheet', href='/css/css.css')
-	
-	script(src='http://code.jquery.com/jquery-1.7.min.js', type='text/javascript')
-	script(src='/js/jquery.tweet.js', type='text/javascript')
-	script(src='/js/jquery.ba-hashchange.min.js', type='text/javascript')
-	script(src='/js/script.min.js', type='text/javascript')
-	script(src='/js/mikevalstar.js', type='text/javascript')
-	
-	//if lt IE 9
-		script(src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js")
+    title Error - Mike Valstar - Programming &amp; Web Development
+    link(rel='stylesheet', href='/css/css.css')
+    
+    script(src='http://code.jquery.com/jquery-1.7.min.js', type='text/javascript')
+    script(src='/js/jquery.tweet.js', type='text/javascript')
+    script(src='/js/jquery.ba-hashchange.min.js', type='text/javascript')
+    script(src='/js/script.min.js', type='text/javascript')
+    script(src='/js/mikevalstar.js', type='text/javascript')
+    
+    //if lt IE 9
+        script(src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js")
 
-	script(type="text/javascript")
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-1984894-13']);
-		
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
+    script(type="text/javascript")
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-1984894-13']);
+        
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
 
 body#mikevalstar
-	#O
-	
-		#H
-			h1: a(href="http://mikevalstar.com/") Mike Valstar
-			#social
-				//- a(href="#"): img(src="/img/rss.png", alt="RSS")
-				a(href="https://github.com/mikevalstar"): img(src="/img/github.png", alt="Github")
-				a(href="https://plus.google.com/107235391839316017795"): img(src="/img/google-plus.png", alt="Google+")
-				a(href="http://twitter.com/#!/mikevalstar"): img(src="/img/twitter.png", alt="Twitter")
+    #O
+    
+        #H
+            h1: a(href="http://mikevalstar.com/") Mike Valstar
+            #social
+                //- a(href="#"): img(src="/img/rss.png", alt="RSS")
+                a(href="https://github.com/mikevalstar"): img(src="/img/github.png", alt="Github")
+                a(href="https://plus.google.com/107235391839316017795"): img(src="/img/google-plus.png", alt="Google+")
+                a(href="http://twitter.com/#!/mikevalstar"): img(src="/img/twitter.png", alt="Twitter")
 
-			h2 Web Development, Programming, Random Thoughts
-	
-		#Nav
-			ul
-				li#NBlog: a(href="/Blog") Blog
-				li#NProjects: a(href="/Projects") Projects
-				li#NAbout: a(href="/About") About
-				li#NTwitter: div Twitter Feed
-			div.clear
-	
-		#C
-			#CC
-				h2 500 Error
+            h2 Web Development, Programming, Random Thoughts
+    
+        #Nav
+            ul
+                li#NBlog: a(href="/Blog") Blog
+                li#NProjects: a(href="/Projects") Projects
+                li#NAbout: a(href="/About") About
+                li#NTwitter: div Twitter Feed
+            div.clear
+    
+        #C
+            #CC
+                h2 500 Error
 
-				- if(typeof(stack) != 'undefined')
-					pre: code.stack!=stack
-				- else
-					There was an error rendering this page. Sorry for the inconvenience.
-	
-		#F Mike Valstar &copy; 2011
+                - if(typeof(stack) != 'undefined')
+                    pre: code.stack!=stack
+                - else
+                    There was an error rendering this page. Sorry for the inconvenience.
+    
+        #F Mike Valstar &copy; 2011

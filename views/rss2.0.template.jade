@@ -3,112 +3,112 @@
 //-  Category Domains
 !!! xml
 rss(version="2.0")
-	channel
-		//- Required channel elements
-		title=channel.title
-		link=channel.link
-		description=channel.description
-	
-		//- Optional Cheannel Elements
-		- if(typeof(channel.ttl) != 'undefined')
-			ttl=channel.ttl
-		- if(typeof(channel.rating) != 'undefined')
-			rating=channel.rating
-		- if(typeof(channel.skipHours) != 'undefined')
-			skipHours=channel.skipHours
-		- if(typeof(channel.skipDays) != 'undefined')
-			skipDays=channel.skipDays
-		- if(typeof(channel.language) != 'undefined')
-			language=channel.language
-		- if(typeof(channel.copyright) != 'undefined')
-			copyright=channel.copyright
-		- if(typeof(channel.generator) != 'undefined')
-			generator=channel.generator
-		- if(typeof(channel.managingEditor) != 'undefined')
-			managingEditor=channel.managingEditor
-		- if(typeof(channel.webMaster) != 'undefined')
-			webMaster=channel.webMaster
-		
-			//- Image object: {url, title, link, width, height}
-		- if(typeof(channel.image) != 'undefined')
-			image
-				url=channel.image.url
-				title=channel.image.title
-				link=channel.image.link
-			- if(typeof(channel.image.width) != 'undefined')
-				width=channel.image.width
-			- if(typeof(channel.image.height) != 'undefined')
-				height=channel.image.height
-	
-			//- textInput object: {name, title, description, link}
-		- if(typeof(channel.textInput) != 'undefined')
-			textInput
-				name=channel.textInput.name
-				title=channel.textInput.title
-				description=channel.textInput.description
-				link=channel.textInput.link
-	
-			//- Category(ies): string or array
-		- if(typeof(channel.category) == 'object' && channel.category.length){
-			- channel.category.forEach(function(cat){
-			category=cat
-			- });
-		- }else if(typeof(channel.category) != 'undefined'){
-			category=channel.category
-		- }
-	
-			//- docs (required but using default)
-		- if(typeof(channel.docs) == 'undefined'){
-			docs http://blogs.law.harvard.edu/tech/rss
-		- }else{
-			docs=channel.docs
-		- }
+    channel
+        //- Required channel elements
+        title=channel.title
+        link=channel.link
+        description=channel.description
+    
+        //- Optional Cheannel Elements
+        - if(typeof(channel.ttl) != 'undefined')
+            ttl=channel.ttl
+        - if(typeof(channel.rating) != 'undefined')
+            rating=channel.rating
+        - if(typeof(channel.skipHours) != 'undefined')
+            skipHours=channel.skipHours
+        - if(typeof(channel.skipDays) != 'undefined')
+            skipDays=channel.skipDays
+        - if(typeof(channel.language) != 'undefined')
+            language=channel.language
+        - if(typeof(channel.copyright) != 'undefined')
+            copyright=channel.copyright
+        - if(typeof(channel.generator) != 'undefined')
+            generator=channel.generator
+        - if(typeof(channel.managingEditor) != 'undefined')
+            managingEditor=channel.managingEditor
+        - if(typeof(channel.webMaster) != 'undefined')
+            webMaster=channel.webMaster
+        
+            //- Image object: {url, title, link, width, height}
+        - if(typeof(channel.image) != 'undefined')
+            image
+                url=channel.image.url
+                title=channel.image.title
+                link=channel.image.link
+            - if(typeof(channel.image.width) != 'undefined')
+                width=channel.image.width
+            - if(typeof(channel.image.height) != 'undefined')
+                height=channel.image.height
+    
+            //- textInput object: {name, title, description, link}
+        - if(typeof(channel.textInput) != 'undefined')
+            textInput
+                name=channel.textInput.name
+                title=channel.textInput.title
+                description=channel.textInput.description
+                link=channel.textInput.link
+    
+            //- Category(ies): string or array
+        - if(typeof(channel.category) == 'object' && channel.category.length){
+            - channel.category.forEach(function(cat){
+            category=cat
+            - });
+        - }else if(typeof(channel.category) != 'undefined'){
+            category=channel.category
+        - }
+    
+            //- docs (required but using default)
+        - if(typeof(channel.docs) == 'undefined'){
+            docs http://blogs.law.harvard.edu/tech/rss
+        - }else{
+            docs=channel.docs
+        - }
 
-			//- pubDate / lastBuildDate - default to now
-		- if(typeof(channel.pubDate) == 'undefined'){
-			pubDate=dateFormat()
-		- }else{
-			pubDate=dateFormat(channel.pubDate)
-		- }
-		
-		- if(typeof(channel.lastBuildDate) == 'undefined'){
-			lastBuildDate=dateFormat()
-		- }else{
-			lastBuildDate=dateFormat(channel.lastBuildDate)
-		- }
-	
-			//- Items
-		- items.forEach(function(item){
-			item
-				//- Required items
-				title=item.title
-				link=item.link
-				description=item.description
-				pubDate=dateFormat(item.pubDate)
-				
-				//- Optional Elements
-				- if(typeof(item.author) != 'undefined')
-					author=item.author
-				- if(typeof(item.comments) != 'undefined')
-					comments=item.comments
-				- if(typeof(item.enclosure) != 'undefined')
-					enclosure(url=item.enclosure, length=item.enclosure_length, type=item.enclosure_type)
-				- if(typeof(item.source) != 'undefined')
-					source(url=item.source_title)=item.source
-					
-					//- Category(ies): string or array
-				- if(typeof(item.category) == 'object' && item.category.length){
-					- item.category.forEach(function(cat){
-					category=cat
-					- });
-				- }else if(typeof(item.category) != 'undefined'){
-					category=item.category
-				- }
-					
-					//- guid with optional permalink reference
-				- if(typeof(item.isPermaLink) != 'undefined' && item.isPermaLink){
-					guid(isPermaLink="true")=item.guid 
-				- } else {
-					guid=item.guid
-				- }
-		- });
+            //- pubDate / lastBuildDate - default to now
+        - if(typeof(channel.pubDate) == 'undefined'){
+            pubDate=dateFormat()
+        - }else{
+            pubDate=dateFormat(channel.pubDate)
+        - }
+        
+        - if(typeof(channel.lastBuildDate) == 'undefined'){
+            lastBuildDate=dateFormat()
+        - }else{
+            lastBuildDate=dateFormat(channel.lastBuildDate)
+        - }
+    
+            //- Items
+        - items.forEach(function(item){
+            item
+                //- Required items
+                title=item.title
+                link=item.link
+                description=item.description
+                pubDate=dateFormat(item.pubDate)
+                
+                //- Optional Elements
+                - if(typeof(item.author) != 'undefined')
+                    author=item.author
+                - if(typeof(item.comments) != 'undefined')
+                    comments=item.comments
+                - if(typeof(item.enclosure) != 'undefined')
+                    enclosure(url=item.enclosure, length=item.enclosure_length, type=item.enclosure_type)
+                - if(typeof(item.source) != 'undefined')
+                    source(url=item.source_title)=item.source
+                    
+                    //- Category(ies): string or array
+                - if(typeof(item.category) == 'object' && item.category.length){
+                    - item.category.forEach(function(cat){
+                    category=cat
+                    - });
+                - }else if(typeof(item.category) != 'undefined'){
+                    category=item.category
+                - }
+                    
+                    //- guid with optional permalink reference
+                - if(typeof(item.isPermaLink) != 'undefined' && item.isPermaLink){
+                    guid(isPermaLink="true")=item.guid 
+                - } else {
+                    guid=item.guid
+                - }
+        - });

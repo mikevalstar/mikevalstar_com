@@ -3,11 +3,12 @@
   , "version": "0.0.3"
   , "private": true
   , "dependencies": {
-      "express": ">=2.5.0 <3.0"
+      "express": "3.x"
     , "jade": ">= 0.0.1"
     , "markdown-js": ">= 0.0.1"
     , "mongoose": ">= 2.4.0"
     , "session-mongoose": ">= 0.0.1"
     , "dateformat": ">= 0.0.1"
+    , "less-middleware": "*"
   }
 }

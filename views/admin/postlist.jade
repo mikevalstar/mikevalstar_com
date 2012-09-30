@@ -1,24 +1,28 @@
-h2 Admin - Post Listing
+extends layout
 
-table.aPostList
-	thead
-		tr
-			th Post ID
-			th Title
-			th Int/Ext
-			th Posted
-	tbody
-	- posts.forEach(function(item){
-		tr
-			td= item.sid
-			td: a(href="/Admin/Post/" + item.sid)= item.title
-			td
-				- if(item.ext_link != ""){
-				| External
-				- }else{
-				| Internal
-				- }
-			td: time= item.posted
-	- })
+block content
 
-a(href="/Admin/NewPost") Create a new post
+    h2 Admin - Post Listing
+    
+    table.aPostList
+        thead
+            tr
+                th Post ID
+                th Title
+                th Int/Ext
+                th Posted
+        tbody
+        - posts.forEach(function(item){
+            tr
+                td= item.sid
+                td: a(href="/Admin/Post/" + item.sid)= item.title
+                td
+                    - if(item.ext_link != ""){
+                    | External
+                    - }else{
+                    | Internal
+                    - }
+                td: time= item.posted
+        - })
+    
+    a(href="/Admin/NewPost") Create a new post
