@@ -139,7 +139,7 @@ body{
     
     #CC{
         padding: 0em 2em;
-        word-break: break-all;
+        word-break: break-word;
     }
 }
 
@@ -235,25 +235,49 @@ a.flickr{ background: url('../img/social/16px/flickr.png') no-repeat bottom left
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    body{
+        font-size: 0.8em;
+    }
     #H{
         h1{
-            font-size: 2em;
-            line-height: 1.1em;
+            font-size: 2.2em;
+            line-height: 1.2em;
             margin:0;
         }
         h4{
-            font-size: .8em;
+            font-size: .9em;
             margin:0;
         }
     }
     
     #social{ .tc; }
+    #twitter{ 
+        height: auto;
+        position: static;
+    }
     
     #N ul li a{
         display: block;
         padding: 0.3em 0.2em 0 0.2em;
         margin-right: .7em;
         font-size: 1em;
+    }
+    
+    .blogMini{
+        h3{
+            font-size: 1.4em;
+            line-height: 1.1em;
+        }
+        h5{
+            font-size: 0.9em;
+        }
+    }
+    
+    .blogPost{
+        h2{
+            font-size: 1.6em;
+            line-height: 1.2em;
+        }
     }
     
     #F{
