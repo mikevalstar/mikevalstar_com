@@ -1,0 +1,264 @@
+// Color Scheme
+// http://www.colourlovers.com/palette/614984/Sorry_Go_Round
+
+@colorHint: #E1E0B2;
+@colorGray: #BBB;
+@colorBlue: #B1D1E0;
+@colorHighlight: #C9CF31;
+@colorLink: #F8931F;
+@colorDarkGray: #333;
+@colorBlack: #000;
+@colorText: @colorDarkGray;
+
+// Variables
+
+// Mixins
+.tr(){ text-align: right; }
+.tc(){ text-align: center; }
+
+.fl{ float: left; }
+.fr{ float: right; }
+.clear{ clear: both; }
+
+// Twitter Bootstrap for main styling
+@import "bootstrap/bootstrap.less";
+@import "bootstrap/responsive.less";
+
+// Main Layout
+html,body{
+    height: 100%;
+}
+#O{
+    // to push the footer to the bottom
+    min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+
+body{
+    background-image: url(../img/noisy_grid.png);
+    background-size: 150px 150px;
+}
+
+#H{
+    h1{
+        font-size: 3.5em;
+        a{
+            color: @colorText;
+        }
+        a:hover{
+            color: @colorLink;
+            text-decoration: none;
+        }
+        img{
+            float: left;
+            height: 72px;
+            width: 72px;
+            margin: 0 .1em;
+        }
+    }
+    h4{
+        color: @colorGray;
+    }
+}
+
+#social{
+    .tr;
+    font-size: 2.1em;
+    line-height: 1em;
+    padding-top: 0.3em;
+    a{ 
+        color: @colorGray; 
+    }
+    a:hover{
+        color: @colorLink;
+        text-decoration: none;
+    }
+    i{ margin: 0 .15em; }
+}
+
+#twitter{
+    font-size: 0.9em;
+    overflow: visible;
+    height: 50px;
+    position: relative;
+    ul{ 
+        list-style: none; 
+        margin: 0; 
+        padding: 0;
+        li{ 
+            background: @colorHint;
+            border: 1px solid black;
+            clear: left; 
+            min-height: 48px;
+            line-height: 1.3em;
+            margin-bottom: 4px;
+            padding: 5px;
+            img{ margin-right: 5px; float: left; height: 48px; width: 48px; }
+        }
+    }
+    a.expand{
+        display: block;
+        float: right;
+        font-size: 2em;
+        padding-top: 10px;
+    }
+    a.expand:hover{
+        text-decoration: none;
+    }
+}
+
+#N{
+    padding-top: .8em;
+    ul{
+        display: inline;
+        list-style: none;
+        li{
+            display: inline-block;
+            a{
+                display: block;
+                padding: 0.3em 1.8em 0 0.3em;
+                margin-right: .7em;
+                font-size: 1.3em;
+                text-transform: uppercase;
+                border-bottom: 3px solid @colorBlack;
+                color: @colorText;
+            }
+            a:hover{
+                text-decoration: none;
+                background: @colorHint;
+            }
+        }
+    }
+}
+
+#C{
+    background: white;
+    padding: 0.4em 0;
+    margin: 0.5em 0;
+    
+    #CC{
+        padding: 0em 2em;
+        word-break: break-all;
+    }
+}
+
+#F{
+    
+    background: @colorHint;
+    margin-top: 1em;
+    .row{padding: 5em 0;}
+    .span4{ .tr; }
+    
+    ul{ 
+        display: inline; 
+        list-style: none;
+        li{ 
+            display: inline-block; 
+            padding: 0 0.5em;
+            a{
+                color: @colorLink;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+// Main Page
+
+.blogMini{
+    h3{
+        margin:0;
+        padding:0;
+        a{
+            color: @colorText;
+        }
+        a:hover{
+            color: @linkColorHover;
+            text-decoration: none;
+        }
+    }
+    h5{
+        .tr;
+        margin:0;
+        padding:0;
+    }
+}
+
+// Blog Posts
+.blogPost{
+    h2{
+        a{
+            color: @colorText;
+        }
+        a:hover{
+            color: @linkColorHover;
+            text-decoration: none;
+        }
+    }
+}
+
+// Other
+a.twitter{ background: url('../img/social/16px/twitter-2.png') no-repeat bottom left; padding-left: 19px; }
+a.reddit{ background: url('../img/social/16px/reddit.png') no-repeat bottom left; padding-left: 19px; }
+a.google{ background: url('../img/social/16px/google-plus-black.png') no-repeat bottom left; padding-left: 19px; }
+a.facebook{ background: url('../img/social/16px/facebook.png') no-repeat bottom left; padding-left: 19px; }
+a.github{ background: url('../img/social/16px/github.png') no-repeat bottom left; padding-left: 19px; }
+a.linkedin{ background: url('../img/social/16px/linkedin.png') no-repeat bottom left; padding-left: 19px; }
+a.stackoverflow{ background: url('../img/social/16px/stackoverflow.png') no-repeat bottom left; padding-left: 19px; }
+a.flickr{ background: url('../img/social/16px/flickr.png') no-repeat bottom left; padding-left: 19px; }
+
+/* Retina Displays */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url("../img/noisy_grid_@2X.png");
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {  
+    
+}
+
+/* Regular desktop */
+@media (max-width: 1199px) {  
+
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    #H{
+        h1{
+            font-size: 2em;
+            line-height: 1.1em;
+            margin:0;
+        }
+        h4{
+            font-size: .8em;
+            margin:0;
+        }
+    }
+    
+    #social{ .tc; }
+    
+    #N ul li a{
+        display: block;
+        padding: 0.3em 0.2em 0 0.2em;
+        margin-right: .7em;
+        font-size: 1em;
+    }
+    
+    #F{
+        background: none;
+        .row{padding: 0;}
+        #Fnav{ display: none; }
+    }
+}

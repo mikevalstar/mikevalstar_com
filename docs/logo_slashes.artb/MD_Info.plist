@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>kDKDrawingInfoTitle</key>
+	<string>logo_slashes.artb</string>
+	<key>kdkdrawinginfocreationdate</key>
+	<date>2012-09-30T22:53:49Z</date>
+	<key>kdkdrawinginfodimensionsshortunits</key>
+	<string>pt</string>
+	<key>kdkdrawinginfodimensionsunits</key>
+	<string>pt</string>
+	<key>kdkdrawinginfodraughter</key>
+	<string>Mike Valstar</string>
+	<key>kdkdrawinginfodrawingdimensions.size_height</key>
+	<string>512.000000</string>
+	<key>kdkdrawinginfodrawingdimensions.size_width</key>
+	<string>512.000000</string>
+	<key>kdkdrawinginfodrawingnumber</key>
+	<string>A2-000004-0001</string>
+	<key>kdkdrawinginfodrawingnumberunformatted</key>
+	<integer>4</integer>
+	<key>kdkdrawinginfodrawingprefix</key>
+	<string>A2</string>
+	<key>kdkdrawinginfodrawingrevision</key>
+	<integer>1</integer>
+	<key>kdkdrawinginfolastmodificationdate</key>
+	<date>2012-09-30T22:53:49Z</date>
+</dict>
+</plist>

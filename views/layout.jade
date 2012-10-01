@@ -1,16 +1,22 @@
 !!! 5
 html(lang="en")
     head
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        
         title #{title} - Mike Valstar - Programming &amp; Web Development
+        
+        link(rel="shortcut icon", href="/img/favicon.png")
+        link(rel="apple-touch-icon-precomposed", href="/img/icon_57.png")
+        link(rel="apple-touch-icon-precomposed", sizes="72x72", href="/img/icon_72.png")
+        link(rel="apple-touch-icon-precomposed", sizes="114x114", href="/img/icon_114.png")
+        link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/img/icon_144.png")
         
         link(href="/RSS", rel="alternate", type="application/rss+xml", title="Mike Valstar - Programming &amp; Web Development")
         
-        link(rel='stylesheet', href='/css/css.css')
+        link(rel='stylesheet', href='/css/style.css')
         
-        script(src='http://code.jquery.com/jquery-1.7.min.js', type='text/javascript')
+        script(src='http://code.jquery.com/jquery-1.8.2.min.js', type='text/javascript')
         script(src='/js/jquery.tweet.js', type='text/javascript')
-        script(src='/js/jquery.ba-hashchange.min.js', type='text/javascript')
-        script(src='/js/script.min.js', type='text/javascript')
         script(src='/js/mikevalstar.js', type='text/javascript')
         
         //if lt IE 9
@@ -27,31 +33,41 @@ html(lang="en")
             })();
 
     body#mikevalstar
-        #O
-        
-            #H
-                h1: a(href="http://mikevalstar.com/") Mike Valstar
-                #social
-                    //- a(href="#"): img(src="/img/rss.png", alt="RSS")
-                    a(href="https://github.com/mikevalstar"): img(src="/img/github.png", alt="Github")
-                    a(href="https://plus.google.com/107235391839316017795"): img(src="/img/google-plus.png", alt="Google+")
-                    a(href="http://twitter.com/#!/mikevalstar"): img(src="/img/twitter.png", alt="Twitter")
-    
-                h2 Web Development, Programming, Random Thoughts
-        
-            - var nclass = (showFullNav ? 'ex' : '')
-            #Nav(class=nclass)
+        #O.container
+            #H.row
+                .span8
+                    h1: a(href="http://mikevalstar.com/")
+                        img(src="/img/logo_144.png") 
+                        | Mike Valstar
+                    h4 Web Development, Programming, Random Thoughts
+                .span4
+                    #social
+                        a(href="/RSS"): i.icon-rss
+                        a(href="https://github.com/mikevalstar"): i.icon-github
+                        a(href="https://plus.google.com/107235391839316017795"): i.icon-google-plus
+                        a(href="http://twitter.com/#!/mikevalstar"): i.icon-twitter
+                    #twitter
+                        Loading Twitter Status...
             
-                ul
-                    li#NBlog: a(href="/Blog") Blog
-                    li#NProjects: a(href="/Projects") Projects
-                    li#NAbout: a(href="/About") About
-                    li#NTwitter: div Twitter Feed
-                div.clear
+            #N.row
+                .span11.offset1
+                    ul
+                        li#NBlog: a(href="/Blog") Blog
+                        li#NProjects: a(href="/Projects") Projects
+                        li#NAbout: a(href="/About") About
+            #C
+                .row
+                    .span12
+                        #CC
+                            block content
+                        
         
-            - var cclass = (showFullNav ? 'hide' : '')
-            #C(class=cclass)
-                #CC
-                    block content    
-        
-            #F Mike Valstar &copy; 2011
+        #F
+            .container
+                .row 
+                    #Fnav.span8
+                        ul
+                            li: a(href="/Blog") Blog
+                            li: a(href="/Projects") Projects
+                            li: a(href="/About") About
+                    .span4 Mike Valstar &copy; 2012

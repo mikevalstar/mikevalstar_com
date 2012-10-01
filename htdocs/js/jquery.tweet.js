@@ -31,7 +31,8 @@
       },
       filter: function(tweet) {                 // [function] whether or not to include a particular tweet (be sure to also set 'fetch')
         return true;
-      }
+      },
+      finishedLoading: null ,                   // [function] on finished loading run function
     }, o);
 
     // See http://daringfireball.net/2010/07/improved_regex_for_matching_urls
@@ -209,6 +210,10 @@
           $(widget).trigger("loaded").trigger((tweets.length === 0 ? "empty" : "full"));
           if (s.refresh_interval) {
             window.setTimeout(function() { $(widget).trigger("tweet:load"); }, 1000 * s.refresh_interval);
+          }
+          
+          if(s.finishedLoading){
+              s.finishedLoading();
           }
         });
       }).trigger("tweet:load");
