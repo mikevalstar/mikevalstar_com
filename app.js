@@ -64,7 +64,8 @@ pp.initPages(app, db);
 
 // 404 Page
 app.use(function(req, res, next){
-    res.render('404.jade', {title: "404 - Page Not Found", showFullNav: false, status: 404, url: req.url });
+    res.status(404);
+    res.render('404.jade', {title: "404 - Page Not Found", url: req.url });
 });
 
 // Example error pages
