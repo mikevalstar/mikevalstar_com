@@ -57,12 +57,12 @@ block content
         .span3
             h3 Archive
             
-            ul
+            ul#archiveSidebar
                 - if(months && months.length > 0){
                     - months.forEach(function(item){
                         li 
+                            span.badge #{item.value.count}
                             a(href="/Blog/#{item.value.year}/#{item.value.month}") #{item.value.year} - #{month_names[item.value.month]}
                             | 
-                            span.badge #{item.value.count}
                     - });
                 - }

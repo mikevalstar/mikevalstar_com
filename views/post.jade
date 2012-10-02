@@ -10,7 +10,7 @@ block content
             time(datetime=post.posted) #{post.posted_human}
         
         - if(post.img_lg != '')
-            div.tc: img(src=post.img_lg)
+            #topImage.tc: img(src=post.img_lg)
         
         - if(post.content == ''){
             !=post.short
@@ -28,12 +28,10 @@ block content
     #disqus_thread
     
     script(type="text/javascript")
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'mikevalstar'; // required: replace example with your forum shortname
         disqus_identifier = $('#disqus_identity').html();
         disqus_url = $('#disqus_permalink a').attr('href');
         
-        /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
             dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
