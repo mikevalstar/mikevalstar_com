@@ -16,6 +16,7 @@ app.configure(function(){
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(express.cookieParser());
+    app.use(express.compress());
     app.use(require('less-middleware')({ src: __dirname + '/htdocs' }));
     
     var mongooseSessionStore = new mongoStore({
