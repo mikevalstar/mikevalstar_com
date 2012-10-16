@@ -1,25 +1,33 @@
 extends ../layout
 
 block content
-
-    h2 Admin - Login
     
     div.loginform
-        form(method="post", action="/Admin/Login")
-            h3 Login
+        form.form-horizontal(method="post", action="/Admin/Login")
+            legend Login
             
-            - if(typeof(error_text) != 'undefined')
-                div.error
-                    span=error_text
+            .control-group
+                label.control-label(for="inputEmail") Email
+                .controls
+                    - if(typeof(email) != 'undefined')
+                        input#inputEmail(type="text", name="email", placeholder="Email", value=email)
+                    - else
+                        input#inputEmail(type="text", name="email", placeholder="Email")
             
-            span Login
-            - if(typeof(email) != 'undefined')
-                input(type="text", name="email", value=email)
-            - else
-                input(type="text", name="email")
-            br
-            span Password
-            input(type="password", name="password")
-            br
-            span &nbsp;
-            input(type="submit", value="Login")
+            - if(typeof(error_text) != 'undefined'){
+                .control-group.error
+                    label.control-label(for="inputPassword") Password
+                    .controls
+                        input#inputPassword(type="password", name="password")
+                        span.help-inline=error_text
+            - }else{
+                .control-group
+                    label.control-label(for="inputPassword") Password
+                    .controls
+                        input#inputPassword(type="password", name="password")
+            - }
+                    
+                    
+            .control-group
+                .controls
+                    input.btn.btn-inverse(type="submit", value="Login")

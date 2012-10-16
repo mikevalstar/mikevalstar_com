@@ -206,6 +206,10 @@ body{
     }
 }
 
+#disqus_identity, #disqus_permalink {
+    display: none;
+}
+
 // Other
 a.twitter{ background: url('../img/social/16px/twitter-2.png') no-repeat bottom left; padding-left: 19px; }
 a.reddit{ background: url('../img/social/16px/reddit.png') no-repeat bottom left; padding-left: 19px; }
@@ -215,6 +219,17 @@ a.github{ background: url('../img/social/16px/github.png') no-repeat bottom left
 a.linkedin{ background: url('../img/social/16px/linkedin.png') no-repeat bottom left; padding-left: 19px; }
 a.stackoverflow{ background: url('../img/social/16px/stackoverflow.png') no-repeat bottom left; padding-left: 19px; }
 a.flickr{ background: url('../img/social/16px/flickr.png') no-repeat bottom left; padding-left: 19px; }
+
+// Admin
+.dropzone{
+    border: 2px dashed @colorGray;
+    color: @colorGray;
+    font-weight: bold;
+    padding: 0.5em 2em;
+    min-width: 20em;
+    text-align: center;
+    background: lighten(@colorGray, 20%);
+}
 
 /* Retina Displays */
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {

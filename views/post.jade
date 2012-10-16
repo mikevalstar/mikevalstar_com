@@ -9,8 +9,8 @@ block content
         h5 Posted on 
             time(datetime=post.posted) #{post.posted_human}
         
-        - if(post.img_lg != '')
-            #topImage.tc: img(src=post.img_lg)
+        - if(post.img_s3 && post.img_s3 != '')
+            #topImage.tc: img(src="//s3.amazonaws.com/mikevalstar/img/lead/1100x300/" + post.img_s3, class=post.img_retina ? "retina" : "")
         
         - if(post.content == ''){
             !=post.short

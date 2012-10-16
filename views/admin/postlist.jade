@@ -2,9 +2,11 @@ extends ../layout
 
 block content
 
-    h2 Admin - Post Listing
+    include adminbar
     
-    table.aPostList
+    a.btn(href="/Admin/NewPost") Create a new post
+    
+    table.table.table-striped.table-hover
         thead
             tr
                 th Post ID
@@ -24,5 +26,3 @@ block content
                     - }
                 td: time= item.posted
         - })
-    
-    a(href="/Admin/NewPost") Create a new post

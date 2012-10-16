@@ -18,8 +18,8 @@ block content
                         h5 Posted on 
                             time(datetime=item.posted) #{item.posted_human}    
                             
-                        - if(item.img_sm != '')
-                            div.tc: img(src=item.img_sm)
+                        - if(item.img_s3 && item.img_s3 != '')
+                            div.tc: img(src="//s3.amazonaws.com/mikevalstar/img/lead/770x209/" + item.img_s3, class=item.img_retina ? "retina" : "")
                         
                         !=item.short
                         

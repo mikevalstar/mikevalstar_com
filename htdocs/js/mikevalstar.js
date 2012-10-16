@@ -9,10 +9,20 @@ var disqus_shortname = 'mikevalstar'; // required: replace example with your for
 var disqus_identifier = 'bp_0';
 var disqus_url = 'http://mikevalstar.com/';
 
-var MV = {};
+if(typeof MV == 'undefined') var MV = {};
 
 MV.content = {};
-
+MV.imageReplace = function(){
+    if (window.devicePixelRatio >= 1.5) {
+        $('img.retina').each(function(index, item){
+            item = $(item);
+            if(!item.attr('src')) return; // no source on image 
+            var path = item.attr('src');
+            var at_2x_path = path.replace(/\.\w+$/, function(match) { return "@2x" + match; });
+            item.attr('src', at_2x_path);
+        });
+    }
+}
 
 $(function(){
 	// Initialize twitter feed
@@ -36,4 +46,7 @@ $(function(){
             });
         }
     });
+    
+    // Retina image replacement
+    MV.imageReplace();
 });

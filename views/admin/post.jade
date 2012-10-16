@@ -2,26 +2,49 @@ extends ../layout
 
 block content
 
+    include adminbar
+
     h2 Edit Post 
-        span.postid= post.id
+        small.postid= post.id
     
-    form(method="post", action="/Admin/Post")
+    form.form-horizontal(method="post", action="/Admin/Post")
         input(type="hidden", name="id", value=post.id)
-        h3 ID 
-            input(type="text", name="sid", value=post.sid)
-        h3 Title
-        input(type="text", name="title", style="width: 100%;", value=post.title)
-        h3 Group
-        input(type="text", name="group", style="width: 100%;", value=post.group)
-        h4 Image Large
-        input(type="text", name="img_lg", style="width: 50%;", value=post.img_lg)
-        h4 Image Small
-        input(type="text", name="img_sm", style="width: 50%;", value=post.img_sm)
-        h3 Content
-        textarea(name="short", style="width: 100%; height: 5em;")= post.short
-        textarea(name="content", style="width: 100%; height: 20em;")= post.content
-        span.i All content is in jade format
-        h4 Link to external content
-        input(type="text", name="ext_link", style="width: 100%;", value=post.ext_link)
-        br
-        input(type="submit", value="Save")
+        
+        .control-group
+            label.control-label(for="inputSID") ID
+            .controls
+                input#inputSID(type="text", name="sid", value=post.sid, style="width: 5em;")
+        .control-group
+            label.control-label(for="inputTitle") Title
+            .controls
+                input#inputTitle(type="text", name="title", value=post.title, style="width: 100%;")
+        .control-group
+            label.control-label(for="inputGroup") Group
+            .controls
+                input#inputGroup(type="text", name="group", value=post.group, style="width: 50%;")
+        .control-group
+            label.control-label(for="inputLeader") Leader Image
+            .controls
+                .input-append{
+                    input#inputLeader(type="text", name="img_s3", value=post.img_s3, style="width: 20em;")
+                    a.btn(href="#", class="imageSelector", data-fill="#inputLeader", data-port="#imageListSelector") Select Image
+                |  
+                label.checkbox.inline
+                    input#inputRetina(type="checkbox", name="img_retina", value="1", checked=post.img_retina)
+                    | Retina
+        #imageListSelector
+        .control-group
+            label.control-label(for="inputShort") Content Short
+            .controls
+                textarea#inputShort(name="short", style="width: 100%; height: 5em;")= post.short
+        .control-group
+            label.control-label(for="inputContent") Content Full
+            .controls
+                textarea#inputContent(name="content", style="width: 100%; height: 20em;")= post.content
+        .control-group
+            label.control-label(for="inputExtLink") External Link
+            .controls
+                input#inputExtLink(type="text", name="ext_link", value=post.ext_link, style="width: 100%;")
+        .control-group
+                .controls
+                    input.btn.btn-inverse(type="submit", value="Save")

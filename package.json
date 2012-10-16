@@ -10,5 +10,8 @@
     , "session-mongoose": ">= 0.0.1"
     , "dateformat": ">= 0.0.1"
     , "less-middleware": "*"
+    , "awssum": "*"
+    , "imagemagick": "*"
+    , "flow": "*"
   }
 }
