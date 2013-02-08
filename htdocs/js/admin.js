@@ -31,6 +31,8 @@ MV.admin.imageList.prototype = {
             $('.dropimglead').on( 'dragenter', function(e) {
                 e.preventDefault();
                 $(this).html('Drop Here');
+            }).on( 'dragover', function(e) {
+                // do nothing.. fixes chrome bug
             }).on( 'dragleave', function(e) {
                 e.preventDefault();
                 $(this).html('Drag a file here to upload');
