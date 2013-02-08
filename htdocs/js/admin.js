@@ -34,10 +34,12 @@ MV.admin.imageList.prototype = {
             }).on( 'dragover', function(e) {
                 // allows drop;
                 e.stopPropagation();
+                e.preventDefault();
             }).on( 'dragleave', function(e) {
                 e.preventDefault();
                 $(this).html('Drag a file here to upload');
             }).on( 'drop', function(e){
+                e.stopPropagation();
                 e.preventDefault();
                 
                 $(this).html('Uploading file!!!');
