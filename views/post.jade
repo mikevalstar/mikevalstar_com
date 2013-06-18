@@ -27,7 +27,7 @@ block content
         a(href="http://mikevalstar.com/Blog/#{post.sid}/#{post.link_title}") http://mikevalstar.com/Blog/#{post.sid}/#{post.link_title}
     #disqus_thread
     
-    script(type="text/javascript")
+    script(type="text/javascript").
         var disqus_shortname = 'mikevalstar'; // required: replace example with your forum shortname
         disqus_identifier = $('#disqus_identity').html();
         disqus_url = $('#disqus_permalink a').attr('href');
